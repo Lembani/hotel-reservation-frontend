@@ -1,7 +1,8 @@
 import './App.css';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Home from './Components/Home';
+// eslint-disable-next-line import/extensions
+import Home from './Components/Home.js';
 import store from './Redux/store';
 
 function App() {
