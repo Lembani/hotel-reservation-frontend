@@ -7,7 +7,11 @@
   min-height: 100vh;
 }
 
-.home nav {
+.none {
+  display: none;
+}
+
+.home .current-nav {
   display: flex;
   justify-content: space-between;
   padding: 1rem;
@@ -20,6 +24,12 @@
   background-color: var(--white);
   color: var(--yellow);
   font-size: 10px;
+}
+
+.home .current-nav .auth-links {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
 }
 
 .home main {
