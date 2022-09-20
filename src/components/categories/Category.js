@@ -1,10 +1,12 @@
 /* eslint-disable react/prop-types */
-import { useGetCategoryByIdQuery } from '../../Redux/APIFunctions/categories';
+import { useGetCategoryByIdQuery /* useUpdateCategoryMutation */ } from '../../Redux/APIFunctions/categories';
 
 const Category = () => {
   const id = localStorage.getItem('category_id');
 
   const { data, isLoading, error } = useGetCategoryByIdQuery(id);
+  // const [updateCategory] = useUpdateCategoryMutation();
+
   return (
     <div>
       {error ? <div className="main">Ooops..! There was an error</div> : null}
@@ -20,6 +22,11 @@ const Category = () => {
             {' '}
             Stars
           </small>
+          {data.hotels?.map((hotel) => (
+            <ul key={hotel.id}>
+              <li>{hotel.name}</li>
+            </ul>
+          ))}
         </div>
       ) : <div className="main">No data!</div>}
     </div>

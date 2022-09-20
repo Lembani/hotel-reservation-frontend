@@ -2,11 +2,13 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable no-nested-ternary */
 import { NavLink } from 'react-router-dom';
-import { useGetCategoriesQuery } from '../../Redux/APIFunctions/categories';
+import { useGetCategoriesQuery/* , useAddCategoryMutation, useDeleteCategoryMutation */ } from '../../Redux/APIFunctions/categories';
 import './Categories.css';
 
 const Categories = () => {
   const { data, error, isLoading } = useGetCategoriesQuery();
+  // const [addCategory] = useAddCategoryMutation();
+  // const [deleteCategory] = useDeleteCategoryMutation();
 
   const handleClick = (category) => {
     localStorage.setItem('category_id', category.id);
@@ -17,7 +19,7 @@ const Categories = () => {
       <h1>HOTEL CATEGORIES</h1>
       {error ? <div className="main">Ooops..! There was an error</div> : null}
       {isLoading ? <div className="main">...Loading!</div> : null}
-      {data ? data.map((category) => (
+      {data ? data?.map((category) => (
         <NavLink to={`/categories/${category.id}`} key={category.id}>
           <div className="main" onClick={() => { handleClick(category); }}>
             <h2>{category.name}</h2>
