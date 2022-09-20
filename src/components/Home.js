@@ -20,7 +20,11 @@ const Home = () => {
     <div className="home">
       <nav className={navBar}>
         <FontAwesomeIcon icon="fa-solid fa-bars" onClick={handleOpen} />
-        <FontAwesomeIcon icon={faSearch} className="search" onClick={() => alert('Please signup or signin!')} />
+        <FontAwesomeIcon
+          icon={faSearch}
+          className="search"
+          onClick={() => alert('Please signup or signin!')}
+        />
       </nav>
       <nav className={sideBar}>
         <div className="auth-links">
@@ -34,7 +38,6 @@ const Home = () => {
         <h1 className="logo">HoVe</h1>
         <p>Acquire what you desire, reserve what you really deserve!!</p>
       </main>
-
     </div>
   );
 };
