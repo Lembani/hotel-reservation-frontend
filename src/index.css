@@ -40,3 +40,8 @@ h6 {
   /* font-family: var(--font); */
   font-weight: 700;
 }
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
