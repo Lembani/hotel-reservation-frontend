@@ -1,0 +1,45 @@
+.navbar {
+  border: 1px solid lightgray;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: fit-content;
+  height: 100vh;
+  padding: 1rem 2rem;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 3rem;
+}
+
+.navlink {
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  border-radius: 0.2rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.uil {
+  font-size: 1.2rem;
+  color: #303030;
+}
+
+.footer {
+  padding: 0;
+  margin-top: -2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #303030;
+}
