@@ -3,6 +3,7 @@
 /* eslint-disable no-nested-ternary */
 import { NavLink } from 'react-router-dom';
 import { useGetCategoriesQuery/* , useAddCategoryMutation, useDeleteCategoryMutation */ } from '../../Redux/APIFunctions/categories';
+import Loading from '../Loading';
 import './Categories.css';
 
 const Categories = () => {
@@ -18,7 +19,7 @@ const Categories = () => {
     <div>
       <h1>HOTEL CATEGORIES</h1>
       {error ? <div className="main">Ooops..! There was an error</div> : null}
-      {isLoading ? <div className="main">...Loading!</div> : null}
+      {isLoading ? <div className="main"><Loading /></div> : null}
       {data ? data?.map((category) => (
         <NavLink to={`/categories/${category.id}`} key={category.id}>
           <div className="main" onClick={() => { handleClick(category); }}>

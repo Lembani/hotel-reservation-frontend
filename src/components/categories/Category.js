@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useGetCategoryByIdQuery /* useUpdateCategoryMutation */ } from '../../Redux/APIFunctions/categories';
+import Loading from '../Loading';
 
 const Category = () => {
   const id = localStorage.getItem('category_id');
@@ -10,7 +11,7 @@ const Category = () => {
   return (
     <div>
       {error ? <div className="main">Ooops..! There was an error</div> : null}
-      {isLoading ? <div className="main">...Loading!</div> : null}
+      {isLoading ? <div className="main"><Loading /></div> : null}
       {data ? (
         <div className="main">
           <h1>{data.name}</h1>
