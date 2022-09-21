@@ -25,7 +25,15 @@ function App() {
               </FormProvider>
           )}
           />
-          <Route exact path="/categories/:id" element={<Category />} />
+          <Route
+            exact
+            path="/categories/:id"
+            element={(
+              <FormProvider>
+                <Category />
+              </FormProvider>
+          )}
+          />
         </Routes>
       </BrowserRouter>
     </Provider>
