@@ -1,3 +1,8 @@
+h1 {
+  text-align: center;
+  color: var(--dark);
+}
+
 .main {
   text-align: center;
   margin: 1rem auto;
@@ -17,4 +22,8 @@
   margin: 1rem auto 1rem auto;
   display: flex;
   justify-content: center;
+}
+
+.trash {
+  background-color: crimson;
 }

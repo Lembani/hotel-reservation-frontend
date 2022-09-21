@@ -35,7 +35,7 @@ export const categoriesApi = createApi({
         method: 'DELETE',
         body: id,
       }),
-      // invalidatesTags: ['Cats'],
+      invalidatesTags: ['Cats'],
     }),
   }),
 });

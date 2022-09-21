@@ -21,7 +21,6 @@ export const FormProvider = ({ children }) => {
   };
 
   const closeForm = () => {
-    // e.preventDefault();
     setShowForm(false);
   };
 
