@@ -5,3 +5,16 @@
   background-color: var(--yellow);
   color: var(--white);
 }
+
+.addcat-btn {
+  padding: 1rem;
+  color: var(--white);
+  font-size: large;
+  background-color: var(--green);
+  border-radius: 1rem;
+  border: none;
+  width: 95vw;
+  margin: 1rem auto 1rem auto;
+  display: flex;
+  justify-content: center;
+}

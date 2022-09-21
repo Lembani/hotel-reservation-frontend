@@ -19,7 +19,7 @@ export const categoriesApi = createApi({
         method: 'POST',
         body: category,
       }),
-      // invalidatesTags: ['Cats']
+      invalidatesTags: ['Cats'],
     }),
     updateCategory: builder.mutation({
       query: (category) => ({
@@ -27,7 +27,7 @@ export const categoriesApi = createApi({
         method: 'PATCH',
         body: category,
       }),
-      // invalidatesTags: ['Cats'],
+      invalidatesTags: ['Cats'],
     }),
     deleteCategory: builder.mutation({
       query: ({ id }) => ({
