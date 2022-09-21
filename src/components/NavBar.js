@@ -10,7 +10,7 @@ const activeStyle = {
 const NavBar = () => (
   <nav className="navbar">
     <div>
-      <h2 className="logo">HoVe</h2>
+      <h2 className="logo logo-name">HoVe</h2>
     </div>
     <div className="links">
       <NavLink
@@ -19,6 +19,13 @@ const NavBar = () => (
         style={({ isActive }) => (isActive ? activeStyle : undefined)}
       >
         Hotels
+      </NavLink>
+      <NavLink
+        to="/categories"
+        className="navlink"
+        style={({ isActive }) => (isActive ? activeStyle : undefined)}
+      >
+        Categories
       </NavLink>
       <NavLink
         to="/reserve_now"

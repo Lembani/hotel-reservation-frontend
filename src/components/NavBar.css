@@ -6,6 +6,8 @@
   width: fit-content;
   height: 100vh;
   padding: 1rem 2rem;
+  position: fixed;
+  left: 0;
 }
 
 .links {
@@ -17,12 +19,13 @@
 
 .navlink {
   text-decoration: none;
+  font-family: poppins, sans-serif;
   color: var(--dark);
-  font-weight: bold;
   font-size: 1.2rem;
   text-transform: uppercase;
   padding: 0.5rem 1rem;
   border-radius: 0.2rem;
+  font-weight: bold;
 }
 
 .social-links {
@@ -38,8 +41,12 @@
 
 .footer {
   padding: 0;
-  margin-top: -2rem;
+  margin-top: 1rem;
   text-align: center;
   font-size: 0.9rem;
   color: #303030;
+}
+
+.logo-name {
+  text-align: center;
 }
