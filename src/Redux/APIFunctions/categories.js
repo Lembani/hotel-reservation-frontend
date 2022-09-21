@@ -38,6 +38,9 @@ export const categoriesApi = createApi({
       }),
       invalidatesTags: ['Cats'],
     }),
+    getCategoryHotels: builder.query({
+      query: (id) => `/categories/${id}/hotels`,
+    }),
   }),
 });
 
@@ -47,4 +50,5 @@ export const {
   useAddCategoryMutation,
   useUpdateCategoryMutation,
   useDeleteCategoryMutation,
+  useGetCategoryHotelsQuery,
 } = categoriesApi;

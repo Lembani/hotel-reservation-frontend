@@ -20,14 +20,14 @@ export const FormProvider = ({ children }) => {
     });
   };
 
-  const closeForm = () => {
+  const closeForm = (e) => {
+    e.preventDefault();
     setShowForm(false);
   };
 
   const handleClose = (e) => {
     e.preventDefault();
-    closeForm();
-    localStorage.clear();
+    closeForm(e);
   };
   return (
     <FormContext.Provider value={{

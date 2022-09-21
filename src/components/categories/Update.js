@@ -7,7 +7,6 @@ import FormContext from '../../Context/FormContext';
 const UpdateCategory = ({ category }) => {
   const [updateCategory] = useUpdateCategoryMutation();
   const { values, setShowForm } = useContext(FormContext);
-  console.log(category.id);
 
   const handleUpdateCategory = (e) => {
     const { name, description, rating } = values;

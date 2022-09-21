@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit } from '@fortawesome/fontawesome-free-solid';
 import FormContext from '../../Context/FormContext';
-import { useGetCategoryByIdQuery } from '../../Redux/APIFunctions/categories';
+import { useGetCategoryByIdQuery, useGetCategoryHotelsQuery } from '../../Redux/APIFunctions/categories';
 import Loading from '../Loading';
 import UpdateCategory from './Update';
 
@@ -11,6 +11,7 @@ const Category = () => {
   const id = localStorage.getItem('category_id');
 
   const { data, isLoading, error } = useGetCategoryByIdQuery(id);
+  const { data: hotels } = useGetCategoryHotelsQuery(id);
   const { showForm, setShowForm } = useContext(FormContext);
 
   return (
@@ -40,12 +41,34 @@ const Category = () => {
             >
               <FontAwesomeIcon icon={faEdit} />
             </button>
-            {data.hotels?.map((hotel) => (
-              <ul key={hotel.id}>
-                <li>{hotel.name}</li>
-              </ul>
-            ))}
           </div>
+          <h2>Hotels Under This Category</h2>
+          {hotels ? (hotels.map((hotel) => (
+            <div key={hotel.id} className="main">
+              <img src={hotel.image_url} alt={hotel.name} size="90x90" />
+              <h3>
+                <span>Hotel Name:</span>
+                {' '}
+                {hotel.name}
+              </h3>
+              <p>
+                <span>Description:</span>
+                {' '}
+                {hotel.description}
+              </p>
+              <strong>
+                <span>Price per Night:</span>
+                {' '}
+                $
+                {hotel.price}
+              </strong>
+              <p>
+                <span>Address:</span>
+                {' '}
+                {hotel.address}
+              </p>
+            </div>
+          ))) : (<h6> No Hotel Yet.</h6>)}
 
         </>
       ) : <div className="main">No data!</div>}
