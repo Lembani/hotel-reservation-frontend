@@ -2,13 +2,16 @@ import { configureStore } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/query';
 import { combineReducers } from 'redux';
 import { categoriesApi } from './APIFunctions/categories';
+import { hotelsReducer } from './Actions/hotels';
 
-const rootReducer = combineReducers({ [categoriesApi.reducerPath]: categoriesApi.reducer });
+const rootReducer = combineReducers({
+  [categoriesApi.reducerPath]: categoriesApi.reducer,
+  hotels: hotelsReducer,
+});
 const store = configureStore({
   reducer: rootReducer,
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(categoriesApi.middleware),
 });
-import { hotelsReducer } from './Actions/hotels';
 
 setupListeners(store.dispatch);
 
