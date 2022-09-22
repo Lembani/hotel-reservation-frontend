@@ -1,3 +1,4 @@
+// eslint-disable   react/jsx-one-expression-per-line
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 // eslint-disable-next-line  object-curly-newline
@@ -24,7 +25,7 @@ const Hotels = () => {
     availableHotels = Hotels.hotels.map((hotel) => (
       <SwiperSlide key={hotel.id}>
         <Hotel
-          key={hotel.id}
+          id={hotel.id}
           name={hotel.name}
           image={hotel.image_url}
           country={hotel.country}

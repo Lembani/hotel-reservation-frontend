@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './components/Home.js';
 import Hotels from './components/Hotels';
 import store from './Redux/store';
+import HotelDetails from './components/HotelDetails';
 
 function App() {
   return (
@@ -13,6 +14,9 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/hotels" element={<Hotels />} />
+          <Route exact path="/hotels" element={<HotelDetails />}>
+            <Route path=":id" element={<HotelDetails />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </Provider>
