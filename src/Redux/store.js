@@ -8,6 +8,7 @@ const store = configureStore({
   reducer: rootReducer,
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(categoriesApi.middleware),
 });
+import { hotelsReducer } from './Actions/hotels';
 
 setupListeners(store.dispatch);
 
