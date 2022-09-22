@@ -27,7 +27,7 @@ const Form = ({ handleAddCategory }) => {
           <input type="text-field" maxLength="300" placeholder="Brief description of this category" name="description" defaultValue={values.description} onChange={(e) => handleChange(e)} required />
           <input type="number" max="5" placeholder="Rating for hotels under this category" name="rating" defaultValue={values.rating} onChange={(e) => handleChange(e)} />
           <div className="btns">
-            <button type="submit" className="create">Create Category</button>
+            <button type="submit" className="create">SAVE</button>
             <button type="button" className="close" onClick={(e) => handleClose(e)}>Close</button>
           </div>
         </form>
