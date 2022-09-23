@@ -121,17 +121,14 @@
   width: 80%;
   position: absolute;
   left: 22%;
+  display: flex;
+  font-family: poppins, sans-serif;
+  padding: 2rem 1rem;
 }
 
 .hotel-img-detail {
   width: 30rem;
   height: 20rem;
-}
-
-.detail-section {
-  display: flex;
-  font-family: poppins, sans-serif;
-  padding: 2rem 1rem;
 }
 
 .hotel-detail-description {
