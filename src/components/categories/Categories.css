@@ -8,8 +8,18 @@ h2 {
   text-align: center;
   margin: 1rem auto;
   padding: 1rem;
-  background-color: var(--yellow);
   color: var(--white);
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cat-link {
+  width: 100%;
+  height: 100%;
+  padding: 2rem 0 0 4rem;
 }
 
 .addcat-btn {
@@ -19,7 +29,6 @@ h2 {
   background-color: var(--green);
   border-radius: 1rem;
   border: none;
-  width: 95vw;
   margin: 1rem auto 1rem auto;
   display: flex;
   justify-content: center;
@@ -27,4 +36,9 @@ h2 {
 
 .trash {
   background-color: crimson;
+  max-height: 2rem;
+  border-radius: 50%;
+  padding: 0 5px;
+  cursor: pointer;
+  margin: 2rem 5px 0 0;
 }

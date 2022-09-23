@@ -46,7 +46,7 @@ const FormContainer = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   position: absolute;
-  filter:opacity(0.5);
+  filter:opacity(0.7);
   filter:blur(100rem);
 }
 
