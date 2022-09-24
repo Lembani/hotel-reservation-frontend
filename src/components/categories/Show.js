@@ -98,7 +98,11 @@ const Category = () => {
           </div>
           <div className="cat-hotels-container">
             <div className="">
-              <h2>Hotels Under This Category</h2>
+              <h2>
+                Hotels Under This Category
+                {' '}
+                {hotels ? <span>{hotels.length}</span> : <span>No Hotel Added Yet.</span>}
+              </h2>
               <button
                 type="button"
                 className="addcat-btn"

@@ -1,7 +1,21 @@
+/* stylelint-disable no-descending-specificity */
 h1,
 h2 {
   text-align: center;
   color: var(--dark);
+}
+
+h1 span,
+h2 span {
+  background-color: var(--yellow);
+  padding: 1rem;
+  border: 1px solid var(--dark);
+  border-radius: 30%;
+}
+
+h1 span:hover,
+h2 span:hover {
+  background-color: var(--green);
 }
 
 .main {
@@ -34,13 +48,32 @@ h2 {
   justify-content: center;
 }
 
+.addcat-btn:hover {
+  border: 2px solid silver;
+  color: #fff;
+}
+
+.addcat-btn:active {
+  border: 1rem solid var(--white);
+  background-color: aqua;
+}
+
 .trash {
-  background-color: crimson;
+  background-color: transparent;
   max-height: 2rem;
   border-radius: 50%;
   padding: 0 5px;
   cursor: pointer;
   margin: 2rem 5px 0 0;
+}
+
+.trash:hover {
+  background-color: crimson;
+  color: #fff;
+}
+
+.trash:active {
+  scale: 2;
 }
 
 .parent {

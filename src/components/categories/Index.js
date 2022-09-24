@@ -36,7 +36,11 @@ const Categories = () => {
         <NavBar />
         <div className="hotels-home">
           <div className="hotels-header">
-            <h1>HOTEL CATEGORIES</h1>
+            <h1>
+              HOTEL CATEGORIES
+              {' '}
+              {data ? <span>{data.length}</span> : <span>No Categories Yet</span>}
+            </h1>
             <button
               type="button"
               className="addcat-btn"
