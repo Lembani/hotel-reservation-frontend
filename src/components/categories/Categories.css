@@ -11,6 +11,7 @@ h2 span {
   padding: 1rem;
   border: 1px solid var(--dark);
   border-radius: 30%;
+  font-family: var(--logo);
 }
 
 h1 span:hover,
