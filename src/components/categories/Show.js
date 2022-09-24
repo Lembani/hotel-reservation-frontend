@@ -43,7 +43,7 @@ const Category = () => {
               <p className="gray">{data.description}</p>
               <h3>Rating Of Hotels In This Category</h3>
               <p className="gray">
-                {data.rating === null ? <p>Hotels in this category have no rating </p> : data.rating === 1 ? <p>1 Star</p> : (
+                {data.rating === null ? <p>No Rating</p> : data.rating === 1 ? <p>1 Star</p> : (
                   <p>
                     {data.rating}
                     {' '}

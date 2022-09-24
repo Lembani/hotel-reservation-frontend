@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable import/order */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
@@ -56,6 +57,10 @@ const Categories = () => {
             slidesPerView={3}
             speed={800}
             navigation
+            loop
+            pagination={{
+              clickable: true,
+            }}
             className="container"
           >
             {data ? data?.map((category) => (
@@ -66,9 +71,13 @@ const Categories = () => {
                     <p>
                       Hotel Ratings:
                       {' '}
-                      {category.rating}
-                      {' '}
-                      Stars
+                      {category.rating === null ? <span>No Rating</span> : category.rating === 1 ? <span>1 Star</span> : (
+                        <span>
+                          {category.rating}
+                          {' '}
+                          Stars
+                        </span>
+                      )}
                     </p>
                     {' '}
                     <div className="rating">
