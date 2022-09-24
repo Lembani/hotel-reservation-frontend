@@ -1,7 +1,7 @@
 // import React, { useEffect, useState } from 'react';
 // import { useDispatch, useSelector } from 'react-redux';
 
-// const AddHotel = () => {
+const AddHotel = () => {
 //   const [category, changeCategory] = useState('');
 //   const dispatch = useDispatch();
 //   const updateCategory = (e) => {
@@ -11,17 +11,17 @@
 //     dispatch(fetchCategories());
 //   }, [dispatch]);
 
-//   let options;
-//   const categories = useSelector((state) => state.categories);
-//   if (categories[0] === undefined) {
-//     options = <option value="volvo">Volvo</option>;
-//   } else {
-//     options = categories.map((item) => (
-//       <option key={item.id} value={item.id}>
-//         {item.name}
-//       </option>
-//     ));
-//   }
+  //   let options;
+  //   const categories = useSelector((state) => state.categories);
+  //   if (categories[0] === undefined) {
+  //     options = <option value="volvo">Volvo</option>;
+  //   } else {
+  //     options = categories.map((item) => (
+  //       <option key={item.id} value={item.id}>
+  //         {item.name}
+  //       </option>
+  //     ));
+  //   }
 
 //   const formSubmit = (e) => {
 //     e.preventDefault();
@@ -37,6 +37,6 @@
 //       </form>
 //     </div>
 //   );
-// };
+};
 
-// export default AddHotel;
+export default AddHotel;

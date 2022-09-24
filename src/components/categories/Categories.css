@@ -74,7 +74,8 @@ h2 span:hover {
 }
 
 .trash:active {
-  scale: 2;
+  background-color: gray;
+  border: none;
 }
 
 .parent {
@@ -137,6 +138,7 @@ h2 span:hover {
   border: 1px solid white;
   padding: 1rem 0;
   box-shadow: 7px 5px rgba(192, 192, 192, 0.083);
+  position: relative;
 }
 
 .cat-hotels-container {
@@ -151,7 +153,7 @@ h2 span:hover {
   padding: 0 5px 2rem 5px;
 }
 
-.bigger {
+.rating .bigger {
   font-size: 4rem;
   text-align: center;
 }
@@ -173,4 +175,10 @@ h2 span:hover {
   display: flex;
   justify-content: center;
   gap: 1rem;
+}
+
+a .white {
+  color: var(--white);
+  position: absolute;
+  top: 80%;
 }

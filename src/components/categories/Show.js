@@ -2,6 +2,7 @@
 /* eslint-disable no-nested-ternary */
 /* eslint-disable react/prop-types */
 import { useContext } from 'react';
+import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit } from '@fortawesome/fontawesome-free-solid';
 import {
@@ -138,6 +139,9 @@ const Category = () => {
                 </SwiperSlide>
               ))) : noHotels }
             </Swiper>
+            <NavLink to="/categories" className="hotels-nav">
+              <i title="Return to categories" className="uil uil-angle-left-b back-description white" />
+            </NavLink>
           </div>
         </section>
       ) : <div className="main">No data!</div>}
