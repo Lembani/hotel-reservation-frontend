@@ -42,3 +42,101 @@ h2 {
   cursor: pointer;
   margin: 2rem 5px 0 0;
 }
+
+.parent {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.cat-hotels-section {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  position: absolute;
+  width: 80%;
+  left: 20%;
+}
+
+.cat-info {
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.cat-header {
+  text-align: end;
+}
+
+.cat-header h1 {
+  text-align: end;
+  color: var(--dark);
+  font-weight: lighter;
+  font-size: 1.5rem;
+}
+
+.cat-header span {
+  font-family: poppins, sans-serif;
+  font-size: 10px;
+  color: gray;
+}
+
+.details {
+  color: var(--dark);
+  max-width: 20vw;
+}
+
+.gray {
+  font-family: poppins, sans-serif;
+  font-size: small;
+  width: 100%;
+  background-color: silver;
+  padding: 1rem;
+  margin: 5px 0 2rem 0;
+}
+
+.cat-hots {
+  display: flex;
+  justify-content: center;
+  border: 1px solid white;
+  padding: 1rem 0;
+  box-shadow: 7px 5px rgba(192, 192, 192, 0.083);
+}
+
+.cat-hotels-container {
+  width: 60%;
+  min-height: 100vh;
+  padding-top: 3rem;
+}
+
+.rating {
+  display: flex;
+  justify-content: center;
+  padding: 0 5px 2rem 5px;
+}
+
+.bigger {
+  font-size: 4rem;
+  text-align: center;
+}
+
+.edit-div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.edit {
+  width: 12rem;
+  border-radius: 2rem;
+  padding: 0.8rem 2px;
+  background-color: var(--green);
+  border: none;
+  color: var(--white);
+  font-size: large;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
