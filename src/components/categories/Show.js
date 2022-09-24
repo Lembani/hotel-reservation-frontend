@@ -101,7 +101,7 @@ const Category = () => {
               <h2>
                 Hotels Under This Category
                 {' '}
-                {hotels ? hotels.length === 0 ? <span>No Hotel Added Yet</span> : <span>{hotels.length}</span> : <span>Loading...</span>}
+                {hotels ? hotels.length === 0 ? <span>No Hotel Added Yet</span> : <span>{hotels.length}</span> : <span>Loading Hotels...</span>}
               </h2>
               <button
                 type="button"

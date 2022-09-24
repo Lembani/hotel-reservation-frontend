@@ -39,7 +39,7 @@ const Categories = () => {
             <h1>
               HOTEL CATEGORIES
               {' '}
-              {data ? <span>{data.length}</span> : <span>No Categories Yet</span>}
+              {data ? data.length === 0 ? <span>No Categories Yet</span> : <span>{data.length}</span> : <span>Loading Categories...</span>}
             </h1>
             <button
               type="button"
