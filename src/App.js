@@ -8,9 +8,10 @@ import Categories from './Components/categories/Index';
 import Category from './Components/categories/Show';
 import store from './Redux/store';
 import { FormProvider } from './Context/FormContext';
-import AddHotel from './Components/AddHotel';
-import Hotels from './Components/Hotels';
-import HotelDetails from './Components/HotelDetails';
+import AddHotel from './Components/Hotels/AddHotel';
+import Hotels from './Components/Hotels/Hotels';
+import HotelDetails from './Components/Hotels/HotelDetails';
+import DeleteHotel from './Components/Hotels/DeleteHotel';
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
             <Route path=":id" element={<HotelDetails />} />
           </Route>
           <Route exact path="/add_hotel" element={<AddHotel />} />
+          <Route exact path="/delete_hotel" element={<DeleteHotel />} />
         </Routes>
       </BrowserRouter>
     </Provider>
