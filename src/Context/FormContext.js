@@ -30,9 +30,15 @@ export const FormProvider = ({ children }) => {
     closeForm(e);
   };
   return (
-    <FormContext.Provider value={{
-      values, setValues, handleChange, handleClose, showForm, setShowForm,
-    }}
+    <FormContext.Provider
+      value={{
+        values,
+        setValues,
+        handleChange,
+        handleClose,
+        showForm,
+        setShowForm,
+      }}
     >
       {children}
     </FormContext.Provider>

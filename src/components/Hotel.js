@@ -21,12 +21,12 @@ const Hotel = (props) => {
             <i className="uil uil-star" />
             <i className="uil uil-star" />
           </div>
-          <div className="location">
+          <div className="hotel-location">
             <p>{country}</p>
             <p>{address}</p>
           </div>
         </div>
-        <div className="icons">
+        <div className="icons-card">
           <div>
             <i className="uil uil-facebook-f" />
           </div>

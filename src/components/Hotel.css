@@ -31,8 +31,8 @@
   z-index: 3;
 }
 
-.icons {
-  margin-top: 1rem;
+.icons-card {
+  margin-top: 2rem;
   display: flex;
   justify-content: space-evenly;
   position: absolute;
@@ -62,15 +62,15 @@
   font-weight: bold;
 }
 
-.location {
-  margin-top: 1rem;
+.hotel-location {
+  margin-top: -1rem;
 }
 
 .uil-star {
   color: orange;
 }
 
-.icons > div {
+.icons-card > div {
   border: 3px solid lightgrey;
   width: 1.5rem;
   height: 1.5rem;
@@ -81,7 +81,7 @@
   padding: 1rem;
 }
 
-.icons > div > .uil {
+.icons-card > div > .uil {
   font-size: 0.9rem;
   color: #303030;
 }
@@ -96,7 +96,7 @@
 
 .swiper-button-next {
   color: #84cc1f;
-  margin-right: 1.8rem;
+  margin-right: 2.1rem;
 }
 
 .navs {
@@ -107,6 +107,11 @@
 .swiper-button-prev {
   color: #84cc1f;
   margin-left: -0.5rem;
+}
+
+.hotel-name-desc {
+  text-align: start;
+  color: #303030;
 }
 
 .loading {
@@ -141,7 +146,7 @@
   margin-bottom: 2rem;
 }
 
-.back-description {
+.hotels-nav > .back-description {
   padding: 0.6rem 1rem 0.6rem 2rem;
   font-size: 1.8rem;
   color: white;
@@ -193,7 +198,7 @@
   align-items: center;
 }
 
-.uil-check-circle {
+.available-benefits > span > .uil-check-circle {
   margin-right: 0.3rem;
   color: #84cc1f;
 }

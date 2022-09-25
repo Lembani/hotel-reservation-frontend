@@ -29,7 +29,7 @@ const HotelDetails = () => {
         </div>
 
         <div className="cost-div">
-          <h1 className>{selectedHotel.name}</h1>
+          <h1 className="hotel-name-desc">{selectedHotel.name}</h1>
           <p>{selectedHotel.country},</p>
           <p>{selectedHotel.city},</p>
           <p>{selectedHotel.address}</p>
@@ -41,7 +41,7 @@ const HotelDetails = () => {
             </div>
             <div className="available-benefits">
               <span>
-                <i className="uil uil-check-circle" />
+                <i className="uil uil-check-circle detail-check" />
                 40% off best available rates
               </span>
               <span>
