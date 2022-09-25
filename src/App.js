@@ -3,14 +3,14 @@
 import './App.css';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Home from './components/Home';
-import Categories from './components/categories/Index';
-import Category from './components/categories/Show';
+import Home from './Components/Home';
+import Categories from './Components/categories/Index';
+import Category from './Components/categories/Show';
 import store from './Redux/store';
 import { FormProvider } from './Context/FormContext';
-import AddHotel from './components/AddHotel';
-import Hotels from './components/Hotels';
-import HotelDetails from './components/HotelDetails';
+import AddHotel from './Components/AddHotel';
+import Hotels from './Components/Hotels';
+import HotelDetails from './Components/HotelDetails';
 
 function App() {
   return (
