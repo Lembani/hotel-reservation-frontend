@@ -177,8 +177,13 @@ h2 span:hover {
   gap: 1rem;
 }
 
+.edit:hover {
+  border: 2px solid #cecfd2;
+}
+
 a .white {
   color: var(--white);
   position: absolute;
-  top: 80%;
+  top: 90%;
+  left: 10%;
 }
