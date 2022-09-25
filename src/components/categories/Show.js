@@ -2,6 +2,7 @@
 /* eslint-disable no-nested-ternary */
 /* eslint-disable react/prop-types */
 import { useContext } from 'react';
+import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit } from '@fortawesome/fontawesome-free-solid';
 import {
@@ -42,7 +43,7 @@ const Category = () => {
               <h3>Category Description</h3>
               <p className="gray">{data.description}</p>
               <h3>Rating Of Hotels In This Category</h3>
-              <p className="gray">
+              <div className="gray">
                 {data.rating === null ? <p>No Rating</p> : data.rating === 1 ? <p>1 Star</p> : (
                   <p>
                     {data.rating}
@@ -50,7 +51,7 @@ const Category = () => {
                     Stars
                   </p>
                 )}
-              </p>
+              </div>
               <div className="rating">
                 { data.rating === 1 ? (<i className="uil uil-star bigger" />) : data.rating === 2 ? (
                   <div className="rating">
@@ -130,6 +131,7 @@ const Category = () => {
                 <SwiperSlide key={hotel.id} className="cat-hots">
                   <Hotel
                     key={hotel.id}
+                    id={hotel.id}
                     name={hotel.name}
                     image={hotel.image_url}
                     country={hotel.country}
@@ -138,6 +140,9 @@ const Category = () => {
                 </SwiperSlide>
               ))) : noHotels }
             </Swiper>
+            <NavLink to="/categories" className="hotels-nav">
+              <i title="Return to categories" className="uil uil-angle-left-b back-description white" />
+            </NavLink>
           </div>
         </section>
       ) : <div className="main">No data!</div>}

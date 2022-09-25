@@ -11,17 +11,17 @@
 //     dispatch(fetchCategories());
 //   }, [dispatch]);
 
-//   let options;
-//   const categories = useSelector((state) => state.categories);
-//   if (categories[0] === undefined) {
-//     options = <option value="volvo">Volvo</option>;
-//   } else {
-//     options = categories.map((item) => (
-//       <option key={item.id} value={item.id}>
-//         {item.name}
-//       </option>
-//     ));
-//   }
+//     let options;
+//     const categories = useSelector((state) => state.categories);
+//     if (categories[0] === undefined) {
+//       options = <option value="volvo">Volvo</option>;
+//     } else {
+//       options = categories.map((item) => (
+//         <option key={item.id} value={item.id}>
+//           {item.name}
+//         </option>
+//       ));
+//     }
 
 //   const formSubmit = (e) => {
 //     e.preventDefault();
