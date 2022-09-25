@@ -2,6 +2,7 @@
 /* eslint-disable no-nested-ternary,react/jsx-indent,indent */
 /* eslint-disable react/prop-types,react/jsx-one-expression-per-line */
 import { useContext } from 'react';
+import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit } from '@fortawesome/fontawesome-free-solid';
 import { Pagination, Navigation } from 'swiper';
@@ -57,15 +58,15 @@ const Category = () => {
               <h3>Category Description</h3>
               <p className="gray">{data.description}</p>
               <h3>Rating Of Hotels In This Category</h3>
-              <p className="gray">
-                {data.rating === null ? (
-                  <p>No Rating</p>
-                ) : data.rating === 1 ? (
-                  <p>1 Star</p>
-                ) : (
-                  <p>{data.rating} Stars</p>
+              <div className="gray">
+                {data.rating === null ? <p>No Rating</p> : data.rating === 1 ? <p>1 Star</p> : (
+                  <p>
+                    {data.rating}
+                    {' '}
+                    Stars
+                  </p>
                 )}
-              </p>
+              </div>
               <div className="rating">
                 {data.rating === 1 ? (
                   <i className="uil uil-star bigger" />
@@ -149,20 +150,22 @@ const Category = () => {
               navigation
               className="container"
             >
-              {hotels
-                ? hotels.map((hotel) => (
-                    <SwiperSlide key={hotel.id} className="cat-hots">
-                      <Hotel
-                        key={hotel.id}
-                        name={hotel.name}
-                        image={hotel.image_url}
-                        country={hotel.country}
-                        address={hotel.address}
-                      />
-                    </SwiperSlide>
-                  ))
-                : noHotels}
+              {hotels ? (hotels.map((hotel) => (
+                <SwiperSlide key={hotel.id} className="cat-hots">
+                  <Hotel
+                    key={hotel.id}
+                    id={hotel.id}
+                    name={hotel.name}
+                    image={hotel.image_url}
+                    country={hotel.country}
+                    address={hotel.address}
+                  />
+                </SwiperSlide>
+              ))) : noHotels }
             </Swiper>
+            <NavLink to="/categories" className="hotels-nav">
+              <i title="Return to categories" className="uil uil-angle-left-b back-description white" />
+            </NavLink>
           </div>
         </section>
       ) : (
