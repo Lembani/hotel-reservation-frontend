@@ -261,6 +261,11 @@
   border: 1px solid lightgray;
 }
 
+select {
+  -webkit-appearance: button;
+  border: none;
+}
+
 .select > select {
   position: absolute;
   right: 5%;
@@ -270,14 +275,8 @@
   outline: none;
   background-color: #84cc1f;
   color: white;
-  font-family: poppins, sans-serif;
   border: 1px solid #84cc1f;
   cursor: pointer;
-}
-
-select {
-  -webkit-appearance: button;
-  border: none;
 }
 
 ::-webkit-scrollbar {
