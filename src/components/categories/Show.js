@@ -2,7 +2,7 @@
 /* eslint-disable no-nested-ternary,react/jsx-indent,indent */
 /* eslint-disable react/prop-types,react/jsx-one-expression-per-line */
 import { useContext } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit } from '@fortawesome/fontawesome-free-solid';
 import { Pagination, Navigation } from 'swiper';
@@ -23,6 +23,7 @@ import Hotel from '../Hotels/Hotel';
 
 const Category = () => {
   const id = localStorage.getItem('category_id');
+  const navigate = useNavigate();
 
   const { data, isLoading, error } = useGetCategoryByIdQuery(id);
   const { data: hotels } = useGetCategoryHotelsQuery(id);
@@ -133,6 +134,7 @@ const Category = () => {
                 className="addcat-btn"
                 onClick={(e) => {
                   e.preventDefault();
+                  navigate('/add_hotel');
                 }}
               >
                 Add A Hotel
