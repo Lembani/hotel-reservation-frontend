@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300&display=swap');
 
 .hotels-section {
   display: flex;
@@ -15,6 +16,10 @@
   font-family: poppins, sans-serif;
   text-align: center;
   margin-top: 2rem;
+}
+
+.notification {
+  font-family: 'Kalam', cursive;
 }
 
 .hotel {
@@ -214,4 +219,73 @@
   padding: 0.8rem 2rem;
   border-radius: 1rem;
   cursor: pointer;
+}
+
+.delete-hotel-btn {
+  position: absolute;
+  left: 35%;
+  bottom: 4%;
+  border: 1px solid #84cc1f;
+  background-color: #84cc1f;
+  font-family: poppins, sans-serif;
+  padding: 0.4rem 1rem;
+  color: white;
+  border-radius: 0.2rem;
+}
+
+.form-section {
+  position: absolute;
+  left: 25%;
+  padding: 3rem;
+  width: 70%;
+}
+
+.hotel-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 20px lightgrey;
+  position: relative;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  background-color: white;
+  border-radius: 0.2rem;
+}
+
+.hotel-form > input {
+  width: 30%;
+  font-family: poppins, sans-serif;
+  padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
+  outline: none;
+  border: 1px solid lightgray;
+}
+
+select {
+  -webkit-appearance: button;
+  border: none;
+}
+
+.select > select {
+  position: absolute;
+  right: 5%;
+  top: 8%;
+  padding: 0.5rem 1rem;
+  font-family: poppins, sans-serif;
+  outline: none;
+  background-color: #84cc1f;
+  color: white;
+  border: 1px solid #84cc1f;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 0.6rem;
+  background-color: var(--scroll-bar-color);
+  border-radius: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 0.5rem;
 }

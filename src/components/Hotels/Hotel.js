@@ -1,10 +1,11 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+// import { useDispatch } from 'react-redux';
+// import { deleteHotel } from '../Redux/Actions/hotels';
 
 const Hotel = (props) => {
   // eslint-disable-next-line  object-curly-newline
   const { name, image, country, address, id } = props;
-
   return (
     <NavLink className="navs" to={`/hotels/${id}`}>
       <div className="hotel">

@@ -4,11 +4,12 @@ import { configureStore } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/query';
 import { combineReducers } from 'redux';
 import { categoriesApi } from './APIFunctions/categories';
-import { hotelsReducer } from './Actions/hotels';
+import { hotelsReducer, hotelDataReducer } from './Actions/hotels';
 
 const rootReducer = combineReducers({
   [categoriesApi.reducerPath]: categoriesApi.reducer,
   hotels: hotelsReducer,
+  hotelData: hotelDataReducer,
 });
 const store = configureStore({
   reducer: rootReducer,
