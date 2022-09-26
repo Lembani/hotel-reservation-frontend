@@ -101,7 +101,7 @@
 
 .swiper-button-next {
   color: #84cc1f;
-  margin-right: 2.1rem;
+  margin-right: 0.5rem;
 }
 
 .navs {
@@ -111,7 +111,6 @@
 
 .swiper-button-prev {
   color: #84cc1f;
-  margin-left: -0.5rem;
 }
 
 .hotel-name-desc {
@@ -288,4 +287,90 @@ select {
 ::-webkit-scrollbar-thumb {
   background-color: white;
   border-radius: 0.5rem;
+}
+
+.mobile-version {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .hotels-section {
+    left: 0%;
+    margin-top: 3rem;
+  }
+
+  .container {
+    display: none;
+  }
+
+  .hotels-home {
+    width: 100%;
+  }
+
+  .mobile-version {
+    display: block;
+    width: 100%;
+    padding: 0 4.1rem;
+    margin-top: 2rem;
+  }
+
+  .swiper-button-prev {
+    margin: 0;
+  }
+
+  .swiper-button-next {
+    margin: 0;
+  }
+
+  .detail-section {
+    left: 0%;
+    flex-direction: column-reverse;
+    margin-top: 3rem;
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .hotel-img-detail {
+    width: 21rem;
+    height: 15rem;
+    margin-top: 1.5rem;
+  }
+
+  .hotel-detail-description {
+    width: 21rem;
+  }
+
+  .cost-div {
+    margin: 0;
+    width: 100%;
+  }
+
+  .desc-price {
+    width: 100%;
+  }
+
+  .submit-mobile {
+    position: absolute;
+    bottom: 1%;
+    right: 1%;
+  }
+
+  .form-section {
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .hotel-form > input {
+    width: 80%;
+  }
+
+  .hotel-form {
+    padding-top: 5rem;
+  }
+
+  .select > select {
+    top: 3%;
+    right: 25%;
+  }
 }

@@ -154,6 +154,7 @@ const AddHotel = () => {
             placeholder="Enter name"
             onChange={updateName}
             value={formInputs.name}
+            className="name-input"
           />
           <input
             type="text"

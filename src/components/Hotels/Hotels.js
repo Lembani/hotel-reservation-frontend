@@ -47,13 +47,23 @@ const Hotels = () => {
         </div>
         <Swiper
           modules={[Navigation, Pagination, Scrollbar, A11y]}
-          spaceBetween={50}
+          spaceBetween={100}
           slidesPerView={3}
           speed={800}
           navigation
           className="container"
         >
           <div>{availableHotels}</div>
+        </Swiper>
+        <Swiper
+          modules={[Navigation, Pagination, Scrollbar, A11y]}
+          spaceBetween={100}
+          slidesPerView={1}
+          speed={800}
+          navigation
+          className="mobile-version"
+        >
+          <div className="mob-cards">{availableHotels}</div>
         </Swiper>
       </div>
     </section>
