@@ -296,6 +296,7 @@ select {
 @media screen and (max-width: 767px) {
   .hotels-section {
     left: 0%;
+    margin-top: 3rem;
   }
 
   .container {
@@ -309,7 +310,7 @@ select {
   .mobile-version {
     display: block;
     width: 100%;
-    padding: 0rem 4.1rem;
+    padding: 0 4.1rem;
     margin-top: 2rem;
   }
 
@@ -319,10 +320,6 @@ select {
 
   .swiper-button-next {
     margin: 0;
-  }
-
-  .hotels-section {
-    margin-top: 3rem;
   }
 
   .detail-section {
