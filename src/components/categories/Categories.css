@@ -138,13 +138,13 @@ h2 span:hover {
   border: 1px solid white;
   padding: 1rem 0;
   box-shadow: 7px 5px rgba(192, 192, 192, 0.083);
-  position: relative;
 }
 
 .cat-hotels-container {
   width: 60%;
   min-height: 100vh;
   padding-top: 3rem;
+  position: relative;
 }
 
 .rating {
@@ -178,12 +178,18 @@ h2 span:hover {
 }
 
 .edit:hover {
-  border: 2px solid #cecfd2;
+  border: 2px solid #e6e8fa;
+  color: #e6e8fa;
 }
 
-a .white {
+.edit:active {
+  gap: 0.5rem;
+  scale: 0.8;
+}
+
+.cat-hotels-container .white {
   color: var(--white);
   position: absolute;
   top: 90%;
-  left: 10%;
+  left: 5%;
 }

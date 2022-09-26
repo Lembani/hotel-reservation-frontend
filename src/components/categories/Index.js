@@ -75,11 +75,14 @@ const Categories = () => {
             spaceBetween={50}
             slidesPerView={3}
             speed={800}
+            updateOnWindowResize
             navigation
             loop
             pagination={{
               clickable: true,
             }}
+            effect="creative"
+            touchRatio={1.5}
             className="container"
           >
             {data ? (
