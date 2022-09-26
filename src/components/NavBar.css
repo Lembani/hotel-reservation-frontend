@@ -50,3 +50,10 @@
 .logo-name {
   text-align: center;
 }
+
+@media screen and (max-width: 767px) {
+  .navbar {
+    background-color: red;
+    display: none;
+  }
+}

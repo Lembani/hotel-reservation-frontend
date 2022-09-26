@@ -54,6 +54,16 @@ const DeleteHotel = () => {
         >
           <div>{availableHotels}</div>
         </Swiper>
+        <Swiper
+          modules={[Navigation, Pagination, Scrollbar, A11y]}
+          spaceBetween={100}
+          slidesPerView={1}
+          speed={800}
+          navigation
+          className="mobile-version"
+        >
+          <div>{availableHotels}</div>
+        </Swiper>
       </div>
     </section>
   );

@@ -59,12 +59,12 @@ const Category = () => {
               <p className="gray">{data.description}</p>
               <h3>Rating Of Hotels In This Category</h3>
               <div className="gray">
-                {data.rating === null ? <p>No Rating</p> : data.rating === 1 ? <p>1 Star</p> : (
-                  <p>
-                    {data.rating}
-                    {' '}
-                    Stars
-                  </p>
+                {data.rating === null ? (
+                  <p>No Rating</p>
+                ) : data.rating === 1 ? (
+                  <p>1 Star</p>
+                ) : (
+                  <p>{data.rating} Stars</p>
                 )}
               </div>
               <div className="rating">
@@ -150,21 +150,26 @@ const Category = () => {
               navigation
               className="container"
             >
-              {hotels ? (hotels.map((hotel) => (
-                <SwiperSlide key={hotel.id} className="cat-hots">
-                  <Hotel
-                    key={hotel.id}
-                    id={hotel.id}
-                    name={hotel.name}
-                    image={hotel.image_url}
-                    country={hotel.country}
-                    address={hotel.address}
-                  />
-                </SwiperSlide>
-              ))) : noHotels }
+              {hotels
+                ? hotels.map((hotel) => (
+                    <SwiperSlide key={hotel.id} className="cat-hots">
+                      <Hotel
+                        key={hotel.id}
+                        id={hotel.id}
+                        name={hotel.name}
+                        image={hotel.image_url}
+                        country={hotel.country}
+                        address={hotel.address}
+                      />
+                    </SwiperSlide>
+                  ))
+                : noHotels}
             </Swiper>
             <NavLink to="/categories" className="hotels-nav">
-              <i title="Return to categories" className="uil uil-angle-left-b back-description white" />
+              <i
+                title="Return to categories"
+                className="uil uil-angle-left-b back-description white"
+              />
             </NavLink>
           </div>
         </section>

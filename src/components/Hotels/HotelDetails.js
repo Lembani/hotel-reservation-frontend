@@ -71,7 +71,7 @@ const HotelDetails = () => {
                   Hand Sanitizer and Face Mask
                 </span>
               </div>
-              <button type="button" className="reserve-btn">
+              <button type="button" className="reserve-btn submit-mobile">
                 Reserve
               </button>
             </div>
