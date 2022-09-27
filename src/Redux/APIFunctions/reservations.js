@@ -27,3 +27,23 @@ export const getReservations = () => (dispatch) => {
       dispatch(fetchReservationsError());
     });
 };
+
+const reservationURL = 'http://127.0.0.1:3000/api/v1/hotels';
+
+export const postReservation = (reservation, hotelId) => (dispatch) => {
+  console.log(reservation);
+  dispatch(fetchReservationsLoading());
+  fetch(`${reservationURL}/${hotelId}/reservations`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify((reservation)),
+  }).then((res) => {
+    console.log(res);
+    // dispatch(addReservation(res));
+  }).catch(() => {
+    dispatch(fetchReservationsError());
+    console.log('error');
+  });
+};
