@@ -3,9 +3,6 @@
 
 .hotels-section {
   display: flex;
-  position: absolute;
-  width: 100%;
-  left: 20%;
 }
 
 .hotels-home {
@@ -126,10 +123,13 @@
   color: #303030;
 }
 
+.show {
+  display: flex;
+  justify-content: space-between;
+}
+
 .detail-section {
   width: 80%;
-  position: absolute;
-  left: 22%;
   display: flex;
   font-family: poppins, sans-serif;
   padding: 2rem 1rem;
@@ -311,7 +311,7 @@ select {
     display: block;
     width: 100%;
     padding: 0 4.1rem;
-    margin-top: 2rem;
+    margin: 30% auto;
   }
 
   .swiper-button-prev {
@@ -351,8 +351,8 @@ select {
 
   .submit-mobile {
     position: absolute;
-    bottom: 1%;
-    right: 1%;
+    bottom: -15%;
+    right: 15%;
   }
 
   .form-section {

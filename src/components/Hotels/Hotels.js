@@ -3,8 +3,9 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 // eslint-disable-next-line  object-curly-newline
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
-
 import { Swiper, SwiperSlide } from 'swiper/react';
+import Loading from '../Loading';
+
 import 'swiper/css/navigation';
 import { fetchHotels } from '../../Redux/Actions/hotels';
 import NavBar from '../NavBar';
@@ -19,10 +20,13 @@ const Hotels = () => {
     dispatch(fetchHotels());
   }, [dispatch]);
   const Hotels = useSelector((state) => state.hotels);
-  console.log(Hotels);
   let availableHotels;
   if (Hotels.hotels === undefined) {
-    availableHotels = <h1 className="loading">Loading hotels ...</h1>;
+    availableHotels = (
+      <div className="main">
+        <Loading />
+      </div>
+    );
   } else {
     availableHotels = Hotels.hotels.map((hotel) => (
       <SwiperSlide key={hotel.id}>

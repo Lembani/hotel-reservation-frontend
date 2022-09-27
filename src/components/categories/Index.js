@@ -35,9 +35,9 @@ const Categories = () => {
 
   return (
     <div>
-      <section className="hotels-section">
+      <section className="categories-section">
         <NavBar />
-        <div className="hotels-home">
+        <div className="cats-home">
           <div className="hotels-header">
             <h1>
               HOTEL CATEGORIES{' '}
@@ -72,18 +72,102 @@ const Categories = () => {
           ) : null}
           <Swiper
             modules={[Navigation, Pagination, Scrollbar, A11y]}
-            spaceBetween={50}
+            spaceBetween={33}
             slidesPerView={3}
             speed={800}
             updateOnWindowResize
+            grabCursor
+            centeredSlides
+            centeredSlidesBounds
             navigation
-            loop
             pagination={{
               clickable: true,
             }}
             effect="creative"
             touchRatio={1.5}
-            className="container"
+            className="cats-container"
+          >
+            {data ? (
+              data?.map((category) => (
+                <SwiperSlide className="card" key={category.id}>
+                  <NavLink to={`/categories/${category.id}`}>
+                    <div
+                      className="cat-link"
+                      onClick={() => {
+                        handleClick(category);
+                      }}
+                    >
+                      <h2>{category.name}</h2>
+                      <p>
+                        Hotel Ratings:{' '}
+                        {category.rating === null ? (
+                          <span>No Rating</span>
+                        ) : category.rating === 1 ? (
+                          <span>1 Star</span>
+                        ) : (
+                          <span>{category.rating} Stars</span>
+                        )}
+                      </p>{' '}
+                      <div className="rating">
+                        {category.rating === 1 ? (
+                          <i className="uil uil-star" />
+                        ) : category.rating === 2 ? (
+                          <div className="rating">
+                            <i className="uil uil-star" />
+                            <i className="uil uil-star" />
+                          </div>
+                        ) : category.rating === 3 ? (
+                          <>
+                            <i className="uil uil-star" />
+                            <i className="uil uil-star" />
+                            <i className="uil uil-star" />
+                          </>
+                        ) : category.rating === 4 ? (
+                          <>
+                            <i className="uil uil-star" />
+                            <i className="uil uil-star" />
+                            <i className="uil uil-star" />
+                            <i className="uil uil-star" />
+                          </>
+                        ) : category.rating === 5 ? (
+                          <>
+                            <i className="uil uil-star" />
+                            <i className="uil uil-star" />
+                            <i className="uil uil-star" />
+                            <i className="uil uil-star" />
+                            <i className="uil uil-star" />
+                          </>
+                        ) : null}{' '}
+                      </div>
+                    </div>
+                  </NavLink>
+                  <button
+                    type="button"
+                    title="Delete Category"
+                    className="trash"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      deleteCategory({ id: category.id });
+                    }}
+                  >
+                    <FontAwesomeIcon icon={faTrash} />
+                  </button>
+                </SwiperSlide>
+              ))
+            ) : (
+              <div className="main">No categories yet...</div>
+            )}
+          </Swiper>
+          <Swiper
+            modules={[Navigation, Pagination, Scrollbar, A11y]}
+            spaceBetween={100}
+            slidesPerView={1}
+            speed={800}
+            navigation
+            pagination={{
+              clickable: true,
+            }}
+            className="mobile-version"
           >
             {data ? (
               data?.map((category) => (

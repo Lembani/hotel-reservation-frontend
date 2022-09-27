@@ -15,7 +15,6 @@ import {
   useGetCategoryByIdQuery,
   useGetCategoryHotelsQuery,
 } from '../../Redux/APIFunctions/categories';
-import Loading from '../Loading';
 import UpdateCategory from './Update';
 import '../Hotels/Hotel.css';
 import NavBar from '../NavBar';
@@ -38,16 +37,13 @@ const Category = () => {
   return (
     <div className="parent">
       {isLoading ? (
-        <div className="main">
-          <Loading />
-        </div>
+        <h1 className="loading">Loading...</h1>
       ) : error ? (
         <div className="main">Ooops..! There was an error</div>
       ) : showForm ? (
         <UpdateCategory category={data} />
       ) : data ? (
         <section className="cat-hotels-section">
-          <NavBar />
           <div className="cat-info">
             <div className="cat-header">
               <h1>{data.name.toUpperCase()}</h1>
@@ -116,7 +112,7 @@ const Category = () => {
             </div>
           </div>
           <div className="cat-hotels-container">
-            <div className="">
+            <div className="center">
               <h2>
                 Hotels Under This Category{' '}
                 {hotels ? (
@@ -150,7 +146,8 @@ const Category = () => {
                 clickable: true,
               }}
               navigation
-              className="container"
+              grabCursor
+              className="cat-container"
             >
               {hotels
                 ? hotels.map((hotel) => (
@@ -171,6 +168,7 @@ const Category = () => {
               <i title="Return to categories" className="uil uil-angle-left-b back-description" />
             </NavLink>
           </div>
+          <NavBar />
         </section>
       ) : (
         <div className="main">No data!</div>
