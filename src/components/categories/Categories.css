@@ -44,7 +44,7 @@ h2 span:hover {
   width: 90%;
   display: flex;
   justify-content: center;
-  min-height: 60vh;
+  min-height: 70vh;
 }
 
 .card {
@@ -54,16 +54,24 @@ h2 span:hover {
   border-radius: 0.5rem;
   box-shadow: 0 0 20px lightgrey;
   margin: 4vh 0 4vh 5px;
-  min-height: 50vh;
+  height: 60vh;
   max-width: 30%;
   gap: 1px;
 }
 
 .cat-link {
   width: 100%;
-  min-height: 40vh;
+  height: 50vh;
   padding: 2rem 2rem 5rem 2rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cat-link img {
+  width: 100%;
+  height: auto;
 }
 
 .addcat-btn {
@@ -250,6 +258,33 @@ h2 span:hover {
     align-items: center;
     text-align: center;
     width: 100%;
+  }
+
+  .card {
+    width: 50vw;
+    justify-content: center;
+  }
+
+  .cat-link {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .cat-link img {
+    width: 100%;
+    height: auto;
+  }
+
+  .trash {
+    background-color: rgba(220, 20, 60, 0.775);
+    max-height: 2rem;
+    border-radius: 50%;
+    padding: 0 5px;
+    cursor: pointer;
+    margin: 0 0 1rem 5px;
+    position: absolute;
+    bottom: 5px;
   }
 
   .cat-info {

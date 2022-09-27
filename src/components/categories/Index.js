@@ -145,6 +145,7 @@ const Categories = () => {
                               </>
                             ) : null}{' '}
                           </div>
+                          <img src="https://media.istockphoto.com/photos/awarding-real-estate-with-stars-picture-id1408246197?s=612x612" alt="categorize" />
                         </div>
                       </NavLink>
                       <button
@@ -227,6 +228,7 @@ const Categories = () => {
                               </>
                             ) : null}{' '}
                           </div>
+                          <img src="https://media.istockphoto.com/photos/awarding-real-estate-with-stars-picture-id1408246197?s=612x612" alt="categorize" width="200" height="200" />
                         </div>
                       </NavLink>
                       <button
