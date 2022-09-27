@@ -70,7 +70,8 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to Microverse
+- Coding Partners
+- Hat tip to [Microverse](https://www.microverse.org)
 - We acknowledge [Murat Korkmaz on Behance](https://www.behance.net/muratk) for designing the wireframe used for this project.
 
 ## 📝 License
