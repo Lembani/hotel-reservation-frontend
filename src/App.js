@@ -29,7 +29,7 @@ function App() {
                 <FormProvider>
                   <Categories />
                 </FormProvider>
-            }
+              }
             />
             <Route
               exact
@@ -38,7 +38,7 @@ function App() {
                 <FormProvider>
                   <Category />
                 </FormProvider>
-            }
+              }
             />
             <Route exact path="/hotels" element={<HotelDetails />}>
               <Route path=":id" element={<HotelDetails />} />

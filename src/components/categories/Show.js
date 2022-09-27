@@ -165,7 +165,10 @@ const Category = () => {
                 : noHotels}
             </Swiper>
             <NavLink to="/categories" className="hotels-nav white">
-              <i title="Return to categories" className="uil uil-angle-left-b back-description" />
+              <i
+                title="Return to categories"
+                className="uil uil-angle-left-b back-description"
+              />
             </NavLink>
           </div>
           <NavBar />
