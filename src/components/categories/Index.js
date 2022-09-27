@@ -15,8 +15,9 @@ import './Categories.css';
 import CreateCategory from './Create';
 import { useContext } from 'react';
 import FormContext from '../../Context/FormContext';
+import MenuContext from '../../Context/MenuContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrash } from '@fortawesome/fontawesome-free-solid';
+import { faTrash, faBars } from '@fortawesome/fontawesome-free-solid';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/navigation';
@@ -28,6 +29,8 @@ const Categories = () => {
   const { data, error, isLoading } = useGetCategoriesQuery();
   const [deleteCategory] = useDeleteCategoryMutation();
   const { showForm, setShowForm } = useContext(FormContext);
+  const { showSideBar, sideBar } = useContext(MenuContext);
+  console.log(sideBar);
 
   const handleClick = (category) => {
     localStorage.setItem('category_id', category.id);
@@ -35,213 +38,217 @@ const Categories = () => {
 
   return (
     <div>
-      <section className="categories-section">
-        <NavBar />
-        <div className="cats-home">
-          <div className="hotels-header">
-            <h1>
-              HOTEL CATEGORIES{' '}
-              {data ? (
-                data.length === 0 ? (
-                  <span>No Categories Yet</span>
+      { sideBar ? <NavBar />
+        : (
+          <section className="categories-section">
+            <NavBar />
+            <div className="cats-home">
+              <FontAwesomeIcon className="hamburger" onClick={() => showSideBar()} icon={faBars} />
+              <div className="hotels-header">
+                <h1>
+                  HOTEL CATEGORIES{' '}
+                  {data ? (
+                    data.length === 0 ? (
+                      <span>No Categories Yet</span>
+                    ) : (
+                      <span>{data.length}</span>
+                    )
+                  ) : (
+                    <span>Loading Categories...</span>
+                  )}
+                </h1>
+                <button
+                  type="button"
+                  className="addcat-btn"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setShowForm(true);
+                  }}
+                >
+                  Add A Category
+                </button>
+              </div>
+              {error ? (
+                <div className="main">Ooops..! There was an error</div>
+              ) : null}
+              {isLoading ? (
+                <div className="main">
+                  <Loading />
+                </div>
+              ) : null}
+              <Swiper
+                modules={[Navigation, Pagination, Scrollbar, A11y]}
+                spaceBetween={33}
+                slidesPerView={3}
+                speed={800}
+                updateOnWindowResize
+                grabCursor
+                centeredSlides
+                centeredSlidesBounds
+                navigation
+                pagination={{
+                  clickable: true,
+                }}
+                effect="creative"
+                touchRatio={1.5}
+                className="cats-container"
+              >
+                {data ? (
+                  data?.map((category) => (
+                    <SwiperSlide className="card" key={category.id}>
+                      <NavLink to={`/categories/${category.id}`}>
+                        <div
+                          className="cat-link"
+                          onClick={() => {
+                            handleClick(category);
+                          }}
+                        >
+                          <h2>{category.name}</h2>
+                          <p>
+                            Hotel Ratings:{' '}
+                            {category.rating === null ? (
+                              <span>No Rating</span>
+                            ) : category.rating === 1 ? (
+                              <span>1 Star</span>
+                            ) : (
+                              <span>{category.rating} Stars</span>
+                            )}
+                          </p>{' '}
+                          <div className="rating">
+                            {category.rating === 1 ? (
+                              <i className="uil uil-star" />
+                            ) : category.rating === 2 ? (
+                              <div className="rating">
+                                <i className="uil uil-star" />
+                                <i className="uil uil-star" />
+                              </div>
+                            ) : category.rating === 3 ? (
+                              <>
+                                <i className="uil uil-star" />
+                                <i className="uil uil-star" />
+                                <i className="uil uil-star" />
+                              </>
+                            ) : category.rating === 4 ? (
+                              <>
+                                <i className="uil uil-star" />
+                                <i className="uil uil-star" />
+                                <i className="uil uil-star" />
+                                <i className="uil uil-star" />
+                              </>
+                            ) : category.rating === 5 ? (
+                              <>
+                                <i className="uil uil-star" />
+                                <i className="uil uil-star" />
+                                <i className="uil uil-star" />
+                                <i className="uil uil-star" />
+                                <i className="uil uil-star" />
+                              </>
+                            ) : null}{' '}
+                          </div>
+                        </div>
+                      </NavLink>
+                      <button
+                        type="button"
+                        title="Delete Category"
+                        className="trash"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          deleteCategory({ id: category.id });
+                        }}
+                      >
+                        <FontAwesomeIcon icon={faTrash} />
+                      </button>
+                    </SwiperSlide>
+                  ))
                 ) : (
-                  <span>{data.length}</span>
-                )
-              ) : (
-                <span>Loading Categories...</span>
-              )}
-            </h1>
-            <button
-              type="button"
-              className="addcat-btn"
-              onClick={(e) => {
-                e.preventDefault();
-                setShowForm(true);
-              }}
-            >
-              Add A Category
-            </button>
-          </div>
-          {error ? (
-            <div className="main">Ooops..! There was an error</div>
-          ) : null}
-          {isLoading ? (
-            <div className="main">
-              <Loading />
+                  <div className="main">No categories yet...</div>
+                )}
+              </Swiper>
+              <Swiper
+                modules={[Navigation, Pagination, Scrollbar, A11y]}
+                spaceBetween={100}
+                slidesPerView={1}
+                speed={800}
+                navigation
+                pagination={{
+                  clickable: true,
+                }}
+                className="mobile-version"
+              >
+                {data ? (
+                  data?.map((category) => (
+                    <SwiperSlide className="hotel flex" key={category.id}>
+                      <NavLink to={`/categories/${category.id}`}>
+                        <div
+                          className="cat-link"
+                          onClick={() => {
+                            handleClick(category);
+                          }}
+                        >
+                          <h2>{category.name}</h2>
+                          <p>
+                            Hotel Ratings:{' '}
+                            {category.rating === null ? (
+                              <span>No Rating</span>
+                            ) : category.rating === 1 ? (
+                              <span>1 Star</span>
+                            ) : (
+                              <span>{category.rating} Stars</span>
+                            )}
+                          </p>{' '}
+                          <div className="rating">
+                            {category.rating === 1 ? (
+                              <i className="uil uil-star" />
+                            ) : category.rating === 2 ? (
+                              <div className="rating">
+                                <i className="uil uil-star" />
+                                <i className="uil uil-star" />
+                              </div>
+                            ) : category.rating === 3 ? (
+                              <>
+                                <i className="uil uil-star" />
+                                <i className="uil uil-star" />
+                                <i className="uil uil-star" />
+                              </>
+                            ) : category.rating === 4 ? (
+                              <>
+                                <i className="uil uil-star" />
+                                <i className="uil uil-star" />
+                                <i className="uil uil-star" />
+                                <i className="uil uil-star" />
+                              </>
+                            ) : category.rating === 5 ? (
+                              <>
+                                <i className="uil uil-star" />
+                                <i className="uil uil-star" />
+                                <i className="uil uil-star" />
+                                <i className="uil uil-star" />
+                                <i className="uil uil-star" />
+                              </>
+                            ) : null}{' '}
+                          </div>
+                        </div>
+                      </NavLink>
+                      <button
+                        type="button"
+                        title="Delete Category"
+                        className="trash"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          deleteCategory({ id: category.id });
+                        }}
+                      >
+                        <FontAwesomeIcon icon={faTrash} />
+                      </button>
+                    </SwiperSlide>
+                  ))
+                ) : (
+                  <div className="main">No categories yet...</div>
+                )}
+              </Swiper>
             </div>
-          ) : null}
-          <Swiper
-            modules={[Navigation, Pagination, Scrollbar, A11y]}
-            spaceBetween={33}
-            slidesPerView={3}
-            speed={800}
-            updateOnWindowResize
-            grabCursor
-            centeredSlides
-            centeredSlidesBounds
-            navigation
-            pagination={{
-              clickable: true,
-            }}
-            effect="creative"
-            touchRatio={1.5}
-            className="cats-container"
-          >
-            {data ? (
-              data?.map((category) => (
-                <SwiperSlide className="card" key={category.id}>
-                  <NavLink to={`/categories/${category.id}`}>
-                    <div
-                      className="cat-link"
-                      onClick={() => {
-                        handleClick(category);
-                      }}
-                    >
-                      <h2>{category.name}</h2>
-                      <p>
-                        Hotel Ratings:{' '}
-                        {category.rating === null ? (
-                          <span>No Rating</span>
-                        ) : category.rating === 1 ? (
-                          <span>1 Star</span>
-                        ) : (
-                          <span>{category.rating} Stars</span>
-                        )}
-                      </p>{' '}
-                      <div className="rating">
-                        {category.rating === 1 ? (
-                          <i className="uil uil-star" />
-                        ) : category.rating === 2 ? (
-                          <div className="rating">
-                            <i className="uil uil-star" />
-                            <i className="uil uil-star" />
-                          </div>
-                        ) : category.rating === 3 ? (
-                          <>
-                            <i className="uil uil-star" />
-                            <i className="uil uil-star" />
-                            <i className="uil uil-star" />
-                          </>
-                        ) : category.rating === 4 ? (
-                          <>
-                            <i className="uil uil-star" />
-                            <i className="uil uil-star" />
-                            <i className="uil uil-star" />
-                            <i className="uil uil-star" />
-                          </>
-                        ) : category.rating === 5 ? (
-                          <>
-                            <i className="uil uil-star" />
-                            <i className="uil uil-star" />
-                            <i className="uil uil-star" />
-                            <i className="uil uil-star" />
-                            <i className="uil uil-star" />
-                          </>
-                        ) : null}{' '}
-                      </div>
-                    </div>
-                  </NavLink>
-                  <button
-                    type="button"
-                    title="Delete Category"
-                    className="trash"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      deleteCategory({ id: category.id });
-                    }}
-                  >
-                    <FontAwesomeIcon icon={faTrash} />
-                  </button>
-                </SwiperSlide>
-              ))
-            ) : (
-              <div className="main">No categories yet...</div>
-            )}
-          </Swiper>
-          <Swiper
-            modules={[Navigation, Pagination, Scrollbar, A11y]}
-            spaceBetween={100}
-            slidesPerView={1}
-            speed={800}
-            navigation
-            pagination={{
-              clickable: true,
-            }}
-            className="mobile-version"
-          >
-            {data ? (
-              data?.map((category) => (
-                <SwiperSlide className="hotel flex" key={category.id}>
-                  <NavLink to={`/categories/${category.id}`}>
-                    <div
-                      className="cat-link"
-                      onClick={() => {
-                        handleClick(category);
-                      }}
-                    >
-                      <h2>{category.name}</h2>
-                      <p>
-                        Hotel Ratings:{' '}
-                        {category.rating === null ? (
-                          <span>No Rating</span>
-                        ) : category.rating === 1 ? (
-                          <span>1 Star</span>
-                        ) : (
-                          <span>{category.rating} Stars</span>
-                        )}
-                      </p>{' '}
-                      <div className="rating">
-                        {category.rating === 1 ? (
-                          <i className="uil uil-star" />
-                        ) : category.rating === 2 ? (
-                          <div className="rating">
-                            <i className="uil uil-star" />
-                            <i className="uil uil-star" />
-                          </div>
-                        ) : category.rating === 3 ? (
-                          <>
-                            <i className="uil uil-star" />
-                            <i className="uil uil-star" />
-                            <i className="uil uil-star" />
-                          </>
-                        ) : category.rating === 4 ? (
-                          <>
-                            <i className="uil uil-star" />
-                            <i className="uil uil-star" />
-                            <i className="uil uil-star" />
-                            <i className="uil uil-star" />
-                          </>
-                        ) : category.rating === 5 ? (
-                          <>
-                            <i className="uil uil-star" />
-                            <i className="uil uil-star" />
-                            <i className="uil uil-star" />
-                            <i className="uil uil-star" />
-                            <i className="uil uil-star" />
-                          </>
-                        ) : null}{' '}
-                      </div>
-                    </div>
-                  </NavLink>
-                  <button
-                    type="button"
-                    title="Delete Category"
-                    className="trash"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      deleteCategory({ id: category.id });
-                    }}
-                  >
-                    <FontAwesomeIcon icon={faTrash} />
-                  </button>
-                </SwiperSlide>
-              ))
-            ) : (
-              <div className="main">No categories yet...</div>
-            )}
-          </Swiper>
-        </div>
-      </section>
+          </section>
+        )}
       {showForm ? <CreateCategory /> : null}
     </div>
   );

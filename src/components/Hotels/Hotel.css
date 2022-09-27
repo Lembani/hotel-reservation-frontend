@@ -294,6 +294,15 @@ select {
 }
 
 @media screen and (max-width: 767px) {
+  .hamburger {
+    display: block;
+    margin-top: 10px;
+    font-size: larger;
+    position: fixed;
+    top: 0;
+    left: 2%;
+  }
+
   .hotels-section {
     left: 0%;
     margin-top: 3rem;
