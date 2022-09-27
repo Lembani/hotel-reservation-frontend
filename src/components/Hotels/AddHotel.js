@@ -1,11 +1,15 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/fontawesome-free-solid';
 import NavBar from '../NavBar';
+import MenuContext from '../../Context/MenuContext';
 import { useGetCategoriesQuery } from '../../Redux/APIFunctions/categories';
 import { addHotel } from '../../Redux/Actions/hotels';
 
 const AddHotel = () => {
+  const { showSideBar, sideBar } = useContext(MenuContext);
   const [notification, notify] = useState('Add Hotel');
   const dispatch = useDispatch();
   const categories = useGetCategoriesQuery().currentData;
@@ -145,67 +149,77 @@ const AddHotel = () => {
   };
   return (
     <div>
-      <NavBar />
-      <div className="form-section">
-        <h1 className="notification">{notification}</h1>
-        <form onSubmit={formSubmit} className="hotel-form">
-          <input
-            type="text"
-            placeholder="Enter name"
-            onChange={updateName}
-            value={formInputs.name}
-            className="name-input"
-          />
-          <input
-            type="text"
-            placeholder="Enter price"
-            onChange={updatePrice}
-            value={formInputs.price}
-          />
-          <input
-            type="text"
-            placeholder="Enter description"
-            onChange={updateDescription}
-            value={formInputs.description}
-          />
-          <input
-            type="text"
-            placeholder="Enter country"
-            onChange={updateCountry}
-            value={formInputs.country}
-          />
-          <input
-            type="text"
-            placeholder="Enter city"
-            onChange={updateCity}
-            value={formInputs.city}
-          />
-          <input
-            type="text"
-            placeholder="Enter address"
-            onChange={updateAddress}
-            value={formInputs.address}
-          />
-          <input
-            type="text"
-            placeholder="Enter image_url"
-            onChange={updateUrl}
-            value={formInputs.image_url}
-          />
-          <div className="select">
-            <select name="category_id" id="1" onClick={updateCategory}>
-              <option defaultValue="">select category</option>
-              {options}
-            </select>
+      {sideBar ? (
+        <NavBar />
+      ) : (
+        <>
+          <div className="form-section">
+            <FontAwesomeIcon
+              className="hamburger"
+              onClick={() => showSideBar()}
+              icon={faBars}
+            />
+            <h1 className="notification">{notification}</h1>
+            <form onSubmit={formSubmit} className="hotel-form">
+              <input
+                type="text"
+                placeholder="Enter name"
+                onChange={updateName}
+                value={formInputs.name}
+                className="name-input"
+              />
+              <input
+                type="text"
+                placeholder="Enter price"
+                onChange={updatePrice}
+                value={formInputs.price}
+              />
+              <input
+                type="text"
+                placeholder="Enter description"
+                onChange={updateDescription}
+                value={formInputs.description}
+              />
+              <input
+                type="text"
+                placeholder="Enter country"
+                onChange={updateCountry}
+                value={formInputs.country}
+              />
+              <input
+                type="text"
+                placeholder="Enter city"
+                onChange={updateCity}
+                value={formInputs.city}
+              />
+              <input
+                type="text"
+                placeholder="Enter address"
+                onChange={updateAddress}
+                value={formInputs.address}
+              />
+              <input
+                type="text"
+                placeholder="Enter image_url"
+                onChange={updateUrl}
+                value={formInputs.image_url}
+              />
+              <div className="select">
+                <select name="category_id" id="1" onClick={updateCategory}>
+                  <option defaultValue="">select category</option>
+                  {options}
+                </select>
+              </div>
+              <button type="submit" className="reserve-btn">
+                submit
+              </button>
+            </form>
+            <NavLink to="../hotels" className="hotels-nav">
+              <i className="uil uil-angle-left-b back-description" />
+            </NavLink>
           </div>
-          <button type="submit" className="reserve-btn">
-            submit
-          </button>
-        </form>
-        <NavLink to="../hotels" className="hotels-nav">
-          <i className="uil uil-angle-left-b back-description" />
-        </NavLink>
-      </div>
+        </>
+      )}
     </div>
   );
 };
