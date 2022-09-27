@@ -379,4 +379,10 @@ select {
     top: 3%;
     right: 25%;
   }
+
+  .del-nav {
+    position: absolute;
+    left: 5%;
+    bottom: -15%;
+  }
 }
