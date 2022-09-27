@@ -361,12 +361,6 @@ select {
     width: 100%;
   }
 
-  .submit-mobile {
-    position: absolute;
-    bottom: -15%;
-    right: 15%;
-  }
-
   .form-section {
     left: 0;
     width: 100%;

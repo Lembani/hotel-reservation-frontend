@@ -47,40 +47,44 @@ const Hotels = () => {
 
   return (
     <section className="hotels-section">
-      { sideBar ? <NavBar />
-        : (
-          <>
-            <NavBar />
-            <div className="hotels-home">
-              <FontAwesomeIcon className="hamburger" onClick={() => showSideBar()} icon={faBars} />
-              <div className="hotels-header">
-                <h1>Available Hotels</h1>
-                <p>Select hotel of your choice</p>
-              </div>
-              <Swiper
-                modules={[Navigation, Pagination, Scrollbar, A11y]}
-                spaceBetween={100}
-                slidesPerView={3}
-                speed={800}
-                navigation
-                className="container"
-              >
-                <div>{availableHotels}</div>
-              </Swiper>
-              <Swiper
-                modules={[Navigation, Pagination, Scrollbar, A11y]}
-                spaceBetween={100}
-                slidesPerView={1}
-                speed={800}
-                navigation
-                className="mobile-version"
-              >
-                <div className="mob-cards">{availableHotels}</div>
-              </Swiper>
+      {sideBar ? (
+        <NavBar />
+      ) : (
+        <>
+          <NavBar />
+          <div className="hotels-home">
+            <FontAwesomeIcon
+              className="hamburger"
+              onClick={() => showSideBar()}
+              icon={faBars}
+            />
+            <div className="hotels-header">
+              <h1>Available Hotels</h1>
+              <p>Select hotel of your choice</p>
             </div>
-
-          </>
-        )}
+            <Swiper
+              modules={[Navigation, Pagination, Scrollbar, A11y]}
+              spaceBetween={100}
+              slidesPerView={3}
+              speed={800}
+              navigation
+              className="container"
+            >
+              <div>{availableHotels}</div>
+            </Swiper>
+            <Swiper
+              modules={[Navigation, Pagination, Scrollbar, A11y]}
+              spaceBetween={100}
+              slidesPerView={1}
+              speed={800}
+              navigation
+              className="mobile-version"
+            >
+              <div className="mob-cards">{availableHotels}</div>
+            </Swiper>
+          </div>
+        </>
+      )}
     </section>
   );
 };

@@ -15,7 +15,11 @@ const NavBar = () => {
       <div>
         <h2 className="logo logo-name">HoVe</h2>
       </div>
-      <div className="links" onClick={() => setSideBar(false)} role="presentation">
+      <div
+        className="links"
+        onClick={() => setSideBar(false)}
+        role="presentation"
+      >
         <NavLink
           to="/hotels"
           className="navlink"
@@ -86,7 +90,13 @@ const NavBar = () => {
       <div className="footer">
         <p> &copy; HoVe & Micro 2022 </p>
       </div>
-      <button type="button" onClick={() => setSideBar(false)} className="close-menu">Close Menu</button>
+      <button
+        type="button"
+        onClick={() => setSideBar(false)}
+        className="close-menu"
+      >
+        Close Menu
+      </button>
     </nav>
   );
 };
