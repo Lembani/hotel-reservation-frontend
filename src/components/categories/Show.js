@@ -127,7 +127,7 @@ const Category = () => {
               </h2>
               <button
                 type="button"
-                className="addcat-btn"
+                className="addcat-btn pos"
                 onClick={(e) => {
                   e.preventDefault();
                   navigate('/add_hotel');

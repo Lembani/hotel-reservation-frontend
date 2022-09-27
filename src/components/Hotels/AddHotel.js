@@ -144,7 +144,7 @@ const AddHotel = () => {
     setTimeout(reset, 1000);
   };
   return (
-    <div>
+    <div className="form-container">
       <NavBar />
       <div className="form-section">
         <h1 className="notification">{notification}</h1>

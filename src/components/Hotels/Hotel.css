@@ -232,9 +232,12 @@
   border-radius: 0.2rem;
 }
 
+.form-container {
+  display: flex;
+  justify-content: space-between;
+}
+
 .form-section {
-  position: absolute;
-  left: 25%;
   padding: 3rem;
   width: 70%;
 }
