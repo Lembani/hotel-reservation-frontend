@@ -1,4 +1,8 @@
 /* stylelint-disable no-descending-specificity */
+.hamburger {
+  display: none;
+}
+
 h1,
 h2 {
   text-align: center;
@@ -20,21 +24,54 @@ h2 span:hover {
 }
 
 .main {
-  text-align: center;
-  margin: 1rem auto;
-  padding: 1rem;
-  color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.flex {
+.categories-section {
   display: flex;
+  gap: 2rem;
+  max-width: 100vw;
+}
+
+.cats-home {
+  width: 80%;
+}
+
+.cats-container {
+  margin-top: 2rem;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  min-height: 70vh;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 20px lightgrey;
+  margin: 4vh 0 4vh 5px;
+  height: 60vh;
+  max-width: 30%;
+  gap: 1px;
 }
 
 .cat-link {
   width: 100%;
-  height: 100%;
-  padding: 2rem 0 0 4rem;
+  height: 50vh;
+  padding: 2rem 2rem 5rem 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cat-link img {
+  width: 100%;
+  height: auto;
 }
 
 .addcat-btn {
@@ -89,9 +126,6 @@ h2 span:hover {
   display: flex;
   flex-direction: row-reverse;
   justify-content: center;
-  position: absolute;
-  width: 80%;
-  left: 20%;
 }
 
 .cat-info {
@@ -138,13 +172,13 @@ h2 span:hover {
   border: 1px solid white;
   padding: 1rem 0;
   box-shadow: 7px 5px rgba(192, 192, 192, 0.083);
-  position: relative;
 }
 
 .cat-hotels-container {
   width: 60%;
   min-height: 100vh;
   padding-top: 3rem;
+  position: relative;
 }
 
 .rating {
@@ -178,12 +212,123 @@ h2 span:hover {
 }
 
 .edit:hover {
-  border: 2px solid #cecfd2;
+  border: 2px solid #e6e8fa;
+  color: #e6e8fa;
 }
 
-a .white {
+.edit:active {
+  gap: 0.5rem;
+  scale: 0.8;
+}
+
+.cat-container {
+  margin-top: 2rem;
+  max-width: 40vw;
+  display: flex;
+  justify-content: center;
+  margin-left: 3rem;
+}
+
+.cat-hotels-container .white {
   color: var(--white);
   position: absolute;
   top: 90%;
-  left: 10%;
+  left: 5%;
+}
+
+@media screen and (max-width: 767px) {
+  .hamburger {
+    display: block;
+    margin-top: 10px;
+    font-size: large;
+  }
+
+  .cats-container {
+    display: none;
+  }
+
+  .cats-home {
+    width: 90%;
+    margin: auto;
+  }
+
+  .cat-hotels-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .card {
+    width: 50vw;
+    justify-content: center;
+  }
+
+  .cat-link {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .cat-link img {
+    width: 100%;
+    height: auto;
+  }
+
+  .trash {
+    background-color: rgba(220, 20, 60, 0.775);
+    max-height: 2rem;
+    border-radius: 50%;
+    padding: 0 5px;
+    cursor: pointer;
+    margin: 0 0 1rem 5px;
+    position: absolute;
+    bottom: 5px;
+  }
+
+  .cat-info {
+    width: 100%;
+    text-align: center;
+  }
+
+  .cat-header {
+    text-align: center;
+  }
+
+  .cat-header h1 {
+    text-align: center;
+  }
+
+  .details {
+    color: var(--dark);
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .cat-container {
+    max-width: 80vw;
+  }
+
+  .cat-hotels-container .white {
+    color: var(--white);
+    position: relative;
+  }
+
+  .cat-hotels-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 90vw;
+    gap: 2rem;
+  }
+
+  h2 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cat-hotels-container .center {
+    margin: 0 auto;
+  }
 }

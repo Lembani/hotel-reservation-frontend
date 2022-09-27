@@ -14,7 +14,7 @@ const HotelDetails = () => {
   const Hotel = useSelector((state) => state.hotelData);
   const selectedHotel = Hotel.hotel;
   return (
-    <div>
+    <div className="show">
       <NavBar />
       {selectedHotel === undefined ? (
         <h1 className="loading">Loading...</h1>

@@ -6,7 +6,6 @@
   width: fit-content;
   height: 100vh;
   padding: 1rem 2rem;
-  position: fixed;
   left: 0;
 }
 
@@ -51,9 +50,29 @@
   text-align: center;
 }
 
+.close-menu {
+  display: none;
+}
+
 @media screen and (max-width: 767px) {
   .navbar {
     background-color: red;
     display: none;
+  }
+
+  .mobile-menu {
+    display: block;
+    width: 100vw;
+    text-align: center;
+  }
+
+  .close-menu {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 1rem;
+    background-color: crimson;
+    color: var(--white);
   }
 }
