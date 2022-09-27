@@ -17,6 +17,7 @@ const Hotels = () => {
     dispatch(fetchHotels());
   }, [dispatch]);
   const Hotels = useSelector((state) => state.hotels);
+
   let availableHotels;
   if (Hotels.hotels === undefined) {
     availableHotels = <h1 className="loading">Loading hotels ...</h1>;
