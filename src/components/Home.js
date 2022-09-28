@@ -2,6 +2,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faWindowClose } from '@fortawesome/fontawesome-free-solid';
 import { useState } from 'react';
 
+import { NavLink } from 'react-router-dom';
+
 const Home = () => {
   const [sideBar, setSideBar] = useState('none');
   const [navBar, setNavBar] = useState('current-nav');
@@ -28,8 +30,12 @@ const Home = () => {
       </nav>
       <nav className={sideBar}>
         <div className="auth-links">
-          <strong>Register</strong>
-          <strong>Login</strong>
+          <NavLink to="/register">
+            <strong>Register</strong>
+          </NavLink>
+          <NavLink to="/login">
+            <strong>Login</strong>
+          </NavLink>
         </div>
         <FontAwesomeIcon icon={faWindowClose} onClick={handleClose} />
       </nav>
