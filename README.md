@@ -48,6 +48,8 @@ npm start
 
 - Gmail: [![Gmail Badge](https://img.shields.io/badge/-chiacarlyle-black?logo=Gmail&logoColor=EA4335&style=plastic)](mailto:chiacarlyle@gmail.com)
 
+<hr>
+
 👤 **Frankline Osoro**
 
 - GitHub: [![LinkedIn Badge](https://img.shields.io/badge/-frank1738-black?logo=LinkedIn&logoColor=0A66C2&style=plastic)](https://github.com/frank1738)
@@ -57,6 +59,17 @@ npm start
 - LinkedIn: [![LinkedIn Badge](https://img.shields.io/badge/-frank1738-black?logo=LinkedIn&logoColor=0A66C2&style=plastic)](http://www.linkedin.com/in/frankline-osoro-b526ba18b)
 
 - Gmail: [![LinkedIn Badge](https://img.shields.io/badge/-frank1738-black?logo=LinkedIn&logoColor=0A66C2&style=plastic)](mailto:franklineosoro08@gmail.com)
+
+<hr>
+
+👤 **Lembani Sakala**
+
+- GitHub: [@Lembani](https://github.com/lembani)
+- Twitter: [@Lembani\_](https://twitter.com/lembani_)
+- LinkedIn: [lembani-sakala](https://linkedin.com/in/lembani-sakala)
+- Gmail: [lembanisakala@gmail.com](mailto:lembanisakala@gmail.com)
+
+<hr>
 
 ## 🤝 Contributing
 

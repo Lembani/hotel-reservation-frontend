@@ -40,7 +40,7 @@ const Reservations = () => {
   });
   console.log(swiper);
 
-  const { reservations, loading, error } = useSelector((state) => state.reservatiions);
+  const { reservations, loading, error } = useSelector((state) => state.reservations);
   const { showSideBar, sideBar } = useContext(MenuContext);
 
   // console.log(reservations);

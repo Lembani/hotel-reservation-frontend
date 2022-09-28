@@ -8,7 +8,7 @@ import { NavLink } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/navigation';
 import { fetchHotels } from '../../Redux/Actions/hotels';
-import NavBar from '../NavBar';
+import Navbar from '../NavBar';
 
 import 'swiper/css';
 import DeletedHotel from './DeletedHotel';
@@ -40,7 +40,7 @@ const DeleteHotel = () => {
 
   return (
     <section className="hotels-section">
-      <NavBar />
+      <Navbar />
       <div className="hotels-home">
         <div className="hotels-header">
           <h1>Delete Hotels</h1>

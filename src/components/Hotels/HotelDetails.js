@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchHotelData } from '../../Redux/Actions/hotels';
-import NavBar from '../NavBar';
+import Navbar from '../NavBar';
 
 const HotelDetails = () => {
   const hotelId = useParams('id').id;
@@ -15,7 +15,7 @@ const HotelDetails = () => {
   const selectedHotel = Hotel.hotel;
   return (
     <div className="show">
-      <NavBar />
+      <Navbar />
       {selectedHotel === undefined ? (
         <h1 className="loading">Loading...</h1>
       ) : (

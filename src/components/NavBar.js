@@ -1,7 +1,9 @@
 import React, { useContext } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import MenuContext from '../Context/MenuContext';
 import './NavBar.css';
+import localStorageActions from '../utils/localStorage';
 
 const activeStyle = {
   background: '#84cc1f',
@@ -9,6 +11,23 @@ const activeStyle = {
 };
 
 const NavBar = () => {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    const URL = 'http://localhost:3000/users/sign_out';
+    axios
+      .delete(URL)
+      .then((res) => {
+        localStorageActions.removeUser();
+        const { data } = res;
+        console.log(data);
+        navigate('/');
+      })
+      .catch((error) => {
+        console.log('Error logging out! ', error);
+      });
+  };
+
   const { sideBar, setSideBar } = useContext(MenuContext);
   return (
     <nav className={sideBar ? 'mobile-menu' : 'navbar'}>
@@ -63,7 +82,7 @@ const NavBar = () => {
           Delete Hotel
         </NavLink>
         <NavLink
-          to="/log_out"
+          onClick={handleLogout}
           className="navlink"
           style={({ isActive }) => (isActive ? activeStyle : undefined)}
         >
@@ -88,7 +107,7 @@ const NavBar = () => {
         </div>
       </div>
       <div className="footer">
-        <p> &copy; HoVe & Micro 2022 </p>
+        <p> &copy; HoVe &amp; Micro 2022 </p>
       </div>
       <button
         type="button"
@@ -100,4 +119,5 @@ const NavBar = () => {
     </nav>
   );
 };
+
 export default NavBar;

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import NavBar from '../NavBar';
+import Navbar from '../NavBar';
 import { useGetCategoriesQuery } from '../../Redux/APIFunctions/categories';
 import { addHotel } from '../../Redux/Actions/hotels';
 
@@ -145,7 +145,7 @@ const AddHotel = () => {
   };
   return (
     <div className="form-container">
-      <NavBar />
+      <Navbar />
       <div className="form-section">
         <h1 className="notification">{notification}</h1>
         <form onSubmit={formSubmit} className="hotel-form">

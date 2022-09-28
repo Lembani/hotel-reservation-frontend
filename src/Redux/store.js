@@ -11,7 +11,7 @@ const rootReducer = combineReducers({
   [categoriesApi.reducerPath]: categoriesApi.reducer,
   hotels: hotelsReducer,
   hotelData: hotelDataReducer,
-  reservatiions: ReservationsReducer,
+  reservations: ReservationsReducer,
 });
 const store = configureStore({
   reducer: rootReducer,
