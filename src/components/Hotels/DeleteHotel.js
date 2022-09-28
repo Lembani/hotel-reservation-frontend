@@ -3,11 +3,12 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 // eslint-disable-next-line  object-curly-newline
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import { NavLink } from 'react-router-dom';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/navigation';
 import { fetchHotels } from '../../Redux/Actions/hotels';
-import NavBar from '../NavBar';
+import Navbar from '../NavBar';
 
 import 'swiper/css';
 import DeletedHotel from './DeletedHotel';
@@ -19,6 +20,7 @@ const DeleteHotel = () => {
     dispatch(fetchHotels());
   }, [dispatch]);
   const Hotels = useSelector((state) => state.hotels);
+
   let availableHotels;
   if (Hotels.hotels === undefined) {
     availableHotels = <h1 className="loading">Loading hotels ...</h1>;
@@ -38,7 +40,7 @@ const DeleteHotel = () => {
 
   return (
     <section className="hotels-section">
-      <NavBar />
+      <Navbar />
       <div className="hotels-home">
         <div className="hotels-header">
           <h1>Delete Hotels</h1>
@@ -64,6 +66,9 @@ const DeleteHotel = () => {
         >
           <div>{availableHotels}</div>
         </Swiper>
+        <NavLink to="../hotels" className="hotels-nav del-nav">
+          <i className="uil uil-angle-left-b back-description" />
+        </NavLink>
       </div>
     </section>
   );

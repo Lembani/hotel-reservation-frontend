@@ -3,9 +3,6 @@
 
 .hotels-section {
   display: flex;
-  position: absolute;
-  width: 100%;
-  left: 20%;
 }
 
 .hotels-home {
@@ -126,10 +123,13 @@
   color: #303030;
 }
 
+.show {
+  display: flex;
+  justify-content: space-between;
+}
+
 .detail-section {
   width: 80%;
-  position: absolute;
-  left: 22%;
   display: flex;
   font-family: poppins, sans-serif;
   padding: 2rem 1rem;
@@ -232,9 +232,12 @@
   border-radius: 0.2rem;
 }
 
+.form-container {
+  display: flex;
+  justify-content: space-between;
+}
+
 .form-section {
-  position: absolute;
-  left: 25%;
   padding: 3rem;
   width: 70%;
 }
@@ -294,6 +297,15 @@ select {
 }
 
 @media screen and (max-width: 767px) {
+  .hamburger {
+    display: block;
+    margin-top: 10px;
+    font-size: larger;
+    position: fixed;
+    top: 0;
+    left: 2%;
+  }
+
   .hotels-section {
     left: 0%;
     margin-top: 3rem;
@@ -311,7 +323,7 @@ select {
     display: block;
     width: 100%;
     padding: 0 4.1rem;
-    margin-top: 2rem;
+    margin: 30% auto;
   }
 
   .swiper-button-prev {
@@ -349,12 +361,6 @@ select {
     width: 100%;
   }
 
-  .submit-mobile {
-    position: absolute;
-    bottom: 1%;
-    right: 1%;
-  }
-
   .form-section {
     left: 0;
     width: 100%;
@@ -372,5 +378,11 @@ select {
   .select > select {
     top: 3%;
     right: 25%;
+  }
+
+  .del-nav {
+    position: absolute;
+    left: 5%;
+    bottom: -15%;
   }
 }
