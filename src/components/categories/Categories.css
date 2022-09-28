@@ -1,8 +1,4 @@
 /* stylelint-disable no-descending-specificity */
-.hamburger {
-  display: none;
-}
-
 h1,
 h2 {
   text-align: center;
@@ -237,12 +233,6 @@ h2 span:hover {
 }
 
 @media screen and (max-width: 767px) {
-  .hamburger {
-    display: block;
-    margin-top: 10px;
-    font-size: large;
-  }
-
   .cats-container {
     display: none;
   }

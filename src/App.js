@@ -13,6 +13,8 @@ import AddHotel from './Components/Hotels/AddHotel';
 import Hotels from './Components/Hotels/Hotels';
 import HotelDetails from './Components/Hotels/HotelDetails';
 import DeleteHotel from './Components/Hotels/DeleteHotel';
+import Reservations from './Components/Reservations';
+import CreateReservation from './Components/CreateReservation';
 
 function App() {
   return (
@@ -45,6 +47,8 @@ function App() {
             </Route>
             <Route exact path="/add_hotel" element={<AddHotel />} />
             <Route exact path="/delete_hotel" element={<DeleteHotel />} />
+            <Route exact path="/reservations" element={<Reservations />} />
+            <Route exact path="/add_reservation" element={<CreateReservation />} />
           </Routes>
         </BrowserRouter>
       </MenuProvider>

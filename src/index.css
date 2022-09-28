@@ -52,3 +52,15 @@ a {
   border-radius: 50%;
   margin: 1rem auto;
 }
+
+.hamburger {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .hamburger {
+    display: block;
+    margin-top: 10px;
+    font-size: large;
+  }
+}

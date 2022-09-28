@@ -35,14 +35,14 @@ const NavBar = () => {
           Categories
         </NavLink>
         <NavLink
-          to="/reserve_now"
+          to="/add_reservation"
           className="navlink"
           style={({ isActive }) => (isActive ? activeStyle : undefined)}
         >
           Reserve Now
         </NavLink>
         <NavLink
-          to="/my_reservations"
+          to="/reservations"
           className="navlink"
           style={({ isActive }) => (isActive ? activeStyle : undefined)}
         >
