@@ -3,7 +3,7 @@
 
 :root {
   --yellow: rgb(237, 179, 32);
-  --green: #99cd32d3;
+  --green: #84cc1f;
   --white: #f9f9f9;
   --dark: #191919;
   --font: acumin-pro, sans-serif;
@@ -39,4 +39,28 @@ h5,
 h6 {
   /* font-family: var(--font); */
   font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.loader {
+  max-width: 90vw;
+  max-height: 80vh;
+  border-radius: 50%;
+  margin: 1rem auto;
+}
+
+.hamburger {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .hamburger {
+    display: block;
+    margin-top: 10px;
+    font-size: large;
+  }
 }

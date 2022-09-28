@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #ddc548;
 }
 
 .input-fields {
@@ -25,17 +24,14 @@
   resize: none;
 }
 
-.input-container, .input-select {
+.input-container,
+.input-select {
   display: flex;
   align-items: center;
   height: 50px;
   justify-content: space-evenly;
   width: 100%;
 }
-/* 
-.input-container {
-  margin-top: 2%;
-} */
 
 input[type="number" i] {
   height: 25px;
@@ -63,24 +59,27 @@ input[type="date" i] {
   font-size: 20px;
 }
 
-.all-reservations .navbar {
-  position: absolute;
-  width: 100%;
-  background: #ddc548;
+.forms {
+  background: linear-gradient(rgba(117, 93, 95, 0.8), rgba(204, 194, 194, 0.8)), url("https://thumbs.dreamstime.com/b/hotel-room-beautiful-orange-sofa-included-43642330.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .reservation {
-  height: 70vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   box-shadow: 4px 9px 9px #a09797be;
-  background: #ddc548;
 }
 
 .reservation p {
   font-size: 20px;
+}
+
+.all-reservations {
+  background: #ddc548;
 }
 
 @media screen and (min-width: 768px) {
@@ -110,8 +109,6 @@ input[type="date" i] {
     align-items: center;
     width: 85%;
     gap: 13%;
-    /* justify-content: space-around; */
-    
   }
 
   #hotels {
@@ -126,10 +123,12 @@ input[type="date" i] {
     justify-content: space-evenly;
     flex-direction: column;
     padding: 15%;
+    text-align: center;
   }
 
   .reservation p {
-    font-size: 20px;
+    font-family: system-ui;
+    font-size: 26px;
   }
 
   .swiper {
@@ -138,14 +137,14 @@ input[type="date" i] {
   }
 
   #swipper {
-    /* margin-left: auto; */
     margin-left: 40%;
     margin-right: 0;
   }
 
   .all-reservations {
     display: flex;
-    background: #ddc548;
+    color: #fff;
+    background: linear-gradient(rgba(117, 93, 95, 0.8), rgba(204, 194, 194, 0.8)), url("https://cdn.britannica.com/96/115096-050-5AFDAF5D/Bellagio-Hotel-Casino-Las-Vegas.jpg");
   }
 
   .all-reservations .navbar {
@@ -154,8 +153,23 @@ input[type="date" i] {
     background: #ddc548;
   }
 
-.form-input button:hover {
-  cursor: pointer;
-  background-color: rgb(79, 126, 7)
-}
+  .form-input button:hover {
+    cursor: pointer;
+    background-color: rgb(79, 126, 7);
+  }
+
+  .mobile-menu {
+    margin-inline: 20%;
+    box-shadow: 4px 9px 9px #a09797be;
+    background: beige;
+  }
+
+  .mobile-menu .social-links {
+    justify-content: space-around;
+  }
+
+  .swiper-button-prev::after,
+  .swiper-rtl .swiper-button-next::after {
+    color: rgb(241, 63, 23);
+  }
 }

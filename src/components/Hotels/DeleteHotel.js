@@ -1,17 +1,20 @@
+// eslint-disable   react/jsx-one-expression-per-line
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 // eslint-disable-next-line  object-curly-newline
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import { NavLink } from 'react-router-dom';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/navigation';
-import { fetchHotels } from '../Redux/Actions/hotels';
-import NavBar from './NavBar';
+import { fetchHotels } from '../../Redux/Actions/hotels';
+import NavBar from '../NavBar';
 
 import 'swiper/css';
-import Hotel from './Hotel';
+import DeletedHotel from './DeletedHotel';
 import './Hotel.css';
 
-const Hotels = () => {
+const DeleteHotel = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchHotels());
@@ -24,8 +27,8 @@ const Hotels = () => {
   } else {
     availableHotels = Hotels.hotels.map((hotel) => (
       <SwiperSlide key={hotel.id}>
-        <Hotel
-          key={hotel.id}
+        <DeletedHotel
+          id={hotel.id}
           name={hotel.name}
           image={hotel.image_url}
           country={hotel.country}
@@ -40,8 +43,8 @@ const Hotels = () => {
       <NavBar />
       <div className="hotels-home">
         <div className="hotels-header">
-          <h1>AVAILABLE HOTELS</h1>
-          <p>please select an hotel</p>
+          <h1>Delete Hotels</h1>
+          <p>Click delete button to delete hotel</p>
         </div>
         <Swiper
           modules={[Navigation, Pagination, Scrollbar, A11y]}
@@ -53,8 +56,21 @@ const Hotels = () => {
         >
           <div>{availableHotels}</div>
         </Swiper>
+        <Swiper
+          modules={[Navigation, Pagination, Scrollbar, A11y]}
+          spaceBetween={100}
+          slidesPerView={1}
+          speed={800}
+          navigation
+          className="mobile-version"
+        >
+          <div>{availableHotels}</div>
+        </Swiper>
+        <NavLink to="../hotels" className="hotels-nav del-nav">
+          <i className="uil uil-angle-left-b back-description" />
+        </NavLink>
       </div>
     </section>
   );
 };
-export default Hotels;
+export default DeleteHotel;

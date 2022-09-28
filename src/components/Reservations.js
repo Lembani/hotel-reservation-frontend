@@ -1,20 +1,18 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
+// import { useContext } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-
-// import Swiper from 'swiper';
 import Swiper from 'swiper/bundle';
-// import { Navigation, Pagination } from 'swiper';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/fontawesome-free-solid';
 import { getReservations } from '../Redux/APIFunctions/reservations';
-import NavBar from './NavBar';
-
+import Navbar from './NavBar';
 import './CreateReservation.css';
-
 import 'swiper/css/bundle';
-// import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import Reservation from './Reservation';
-// import { fetchHotels } from '../Redux/Actions/hotels';
+
+import MenuContext from '../Context/MenuContext';
 
 const Reservations = () => {
   const swiper = new Swiper('.swiper', {
@@ -42,8 +40,10 @@ const Reservations = () => {
   });
   console.log(swiper);
 
-  const { reservations, loading, error } = useSelector((state) => state.reservations);
-  console.log(reservations);
+  const { reservations, loading, error } = useSelector((state) => state.reservatiions);
+  const { showSideBar, sideBar } = useContext(MenuContext);
+
+  // console.log(reservations);
 
   const dispatch = useDispatch();
 
@@ -58,39 +58,54 @@ const Reservations = () => {
   if (error) {
     <h1 className="error">Kindly refresh the page ...</h1>;
   }
+  // console.log(sideBar);
+  // const [toggle, setToggle] = useState(false);
+
+  // const handlemenu = () => {
+  //   setToggle(!toggle);
+  //   // return toggle;
+  // };
+
+  console.log(sideBar);
 
   return (
-    <div className="all-reservations">
-      {/* <h1>ALL MY RESERVATIONS</h1> */}
 
-      <div className="swiper" id="swipper">
-        <div className="swiper-wrapper">
-          {
-        reservations.map((reservation) => (
+    (
+      <div className="all-reservations">
+        {
+            sideBar ? <Navbar />
+              : (
+                <>
+                  <FontAwesomeIcon className="toggle" onClick={() => showSideBar()} icon={faBars} />
+                  <div className="swiper" id="swipper">
+                    <div className="swiper-wrapper">
+                      {reservations.map((reservation) => (
+                        <div key={reservation.id} className="swiper-slide">
+                          <Reservation
+                            key={reservation.id}
+                            reason={reservation.reason}
+                            duration={reservation.duration}
+                            startDay={reservation.start_day}
+                            endDay={reservation.end_day}
+                          />
+                        </div>
 
-          <div key={reservation.id} className="swiper-slide">
-            <Reservation
-              key={reservation.id}
-              reason={reservation.reason}
-              duration={reservation.duration}
-              startDay={reservation.startDay}
-              endDay={reservation.endDay}
-            />
-          </div>
+                      ))}
+                    </div>
+                    <div className="swiper-pagination" />
 
-        ))
-          }
-        </div>
-        <div className="swiper-pagination" />
+                    <div className="swiper-button-prev" />
+                    <div className="swiper-button-next" />
 
-        <div className="swiper-button-prev" />
-        <div className="swiper-button-next" />
+                    <div className="swiper-scrollbar" />
 
-        <div className="swiper-scrollbar" />
-
+                  </div>
+                  <Navbar />
+                </>
+              )
+        }
       </div>
-      <NavBar />
-    </div>
+    )
   );
 };
 export default Reservations;
