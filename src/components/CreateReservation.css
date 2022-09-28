@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: #ddc548;
 }
 
 .input-fields {
@@ -9,7 +10,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 93vh;
+  height: 95vh;
   width: 90%;
   box-shadow: 4px 9px 9px #a09797;
 }
@@ -24,14 +25,17 @@
   resize: none;
 }
 
-.input-container {
+.input-container, .input-select {
   display: flex;
   align-items: center;
   height: 50px;
-  gap: 5%;
+  justify-content: space-evenly;
   width: 100%;
-  padding-left: 7%;
 }
+/* 
+.input-container {
+  margin-top: 2%;
+} */
 
 input[type="number" i] {
   height: 25px;
@@ -46,16 +50,37 @@ input[type="date" i] {
 .form-input button {
   border: 0;
   padding: 10px;
-  width: 25%;
+  width: 40%;
   height: 45px;
   border-radius: 10px;
-  background: navy;
-  color: white;
+  background: #20a120;
+  margin-top: 5%;
 }
 
-.form-input button:hover {
-  cursor: pointer;
-  background-color: rgb(78, 78, 229);
+.form-input button a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.all-reservations .navbar {
+  position: absolute;
+  width: 100%;
+  background: #ddc548;
+}
+
+.reservation {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 4px 9px 9px #a09797be;
+  background: #ddc548;
+}
+
+.reservation p {
+  font-size: 20px;
 }
 
 @media screen and (min-width: 768px) {
@@ -83,12 +108,54 @@ input[type="date" i] {
   .input-select label {
     display: flex;
     align-items: center;
-    width: 70%;
-    justify-content: space-between;
+    width: 85%;
+    gap: 13%;
+    /* justify-content: space-around; */
+    
   }
 
   #hotels {
     height: 40px;
     width: 46%;
   }
+
+  .reservation {
+    height: 90vh;
+    box-shadow: 4px 9px 9px #a09797be;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding: 15%;
+  }
+
+  .reservation p {
+    font-size: 20px;
+  }
+
+  .swiper {
+    width: 50%;
+    height: 99vh;
+  }
+
+  #swipper {
+    /* margin-left: auto; */
+    margin-left: 40%;
+    margin-right: 0;
+  }
+
+  .all-reservations {
+    display: flex;
+    background: #ddc548;
+  }
+
+  .all-reservations .navbar {
+    position: absolute;
+    width: 35%;
+    background: #ddc548;
+  }
+
+.form-input button:hover {
+  cursor: pointer;
+  background-color: rgb(79, 126, 7)
+}
 }

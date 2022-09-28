@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import { postReservation } from '../Redux/APIFunctions/reservations';
 import { fetchHotels } from '../Redux/Actions/hotels';
 import './CreateReservation.css';
@@ -28,7 +29,7 @@ const CreateReservation = () => {
       duration: duration.value,
       start_day: startDay.value,
       end_day: endDay.value,
-    //   user_id: user.id,
+      user_id: 1,
     };
 
     dispatch(postReservation(newReservation, optionId));
@@ -58,6 +59,7 @@ const CreateReservation = () => {
           <label htmlFor="group">
             Choose a hotel:
             <select name="hotels" id="hotels" onChange={(e) => handleSelect(e)}>
+              <option>Choose a hotel</option>
               {
               Hotels.hotels
                 ?.map((hotel) => <option key={hotel.id} value={hotel.id}>{hotel.name}</option>)
@@ -65,7 +67,12 @@ const CreateReservation = () => {
             </select>
           </label>
         </div>
-        <button type="submit">Add</button>
+
+        <button type="submit">
+          <NavLink to="/reservations">
+            Add
+          </NavLink>
+        </button>
       </form>
     </div>
   );
