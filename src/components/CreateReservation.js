@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/fontawesome-free-solid';
 import { postReservation } from '../Redux/APIFunctions/reservations';
@@ -11,6 +11,7 @@ import NavBar from './NavBar';
 import MenuContext from '../Context/MenuContext';
 
 /* eslint-disable  jsx-a11y/label-has-associated-control */
+/* eslint-disable  no-unused-expressions */
 
 const CreateReservation = () => {
   const dispatch = useDispatch();
@@ -24,6 +25,11 @@ const CreateReservation = () => {
   const handleSelect = (e) => {
     setoption(e.target.value);
   };
+
+  const location = useLocation();
+  const { hotelId } = location.state || {};
+
+  console.log(hotelId);
   console.log(optionId);
 
   const handleSubmit = (e) => {
@@ -36,10 +42,12 @@ const CreateReservation = () => {
       duration: duration.value,
       start_day: startDay.value,
       end_day: endDay.value,
-      user_id: 1,
+      // user_id: 1,
     };
 
-    dispatch(postReservation(newReservation, optionId));
+    hotelId ? dispatch(postReservation(newReservation, hotelId))
+      : dispatch(postReservation(newReservation, optionId));
+
     reason.value = '';
     duration.value = '';
   };
@@ -66,27 +74,31 @@ const CreateReservation = () => {
                 <label>End day:</label>
                 <input type="date" name="endDay" required />
               </div>
-              <div className="input-select">
-                <label htmlFor="group">
-                  Choose a hotel:
-                  <select name="hotels" id="hotels" onChange={(e) => handleSelect(e)}>
-                    <option>Choose a hotel</option>
-                    {Hotels.hotels
-                      ?.map(
-                        (hotel) => (
-                          <option key={hotel.id} value={hotel.id}>
-                            {hotel.name}
-                          </option>
-                        ),
-                      )}
-                  </select>
-                </label>
-              </div>
+              {
+                hotelId ? null : (
+                  <div className="input-select">
+                    <label htmlFor="group">
+                      Choose a hotel:
+                      <select name="hotels" id="hotels" onChange={(e) => handleSelect(e)}>
+                        <option>Choose a hotel</option>
+                        {Hotels.hotels
+                          ?.map(
+                            (hotel) => (
+                              <option key={hotel.id} value={hotel.id}>
+                                {hotel.name}
+                              </option>
+                            ),
+                          )}
+                      </select>
+                    </label>
+                  </div>
+                )
+              }
 
               <button type="submit">
-                <NavLink to="/reservations">
-                  Add
-                </NavLink>
+
+                Add
+
               </button>
             </form>
           </div>

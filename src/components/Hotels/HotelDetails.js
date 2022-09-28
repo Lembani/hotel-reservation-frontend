@@ -72,7 +72,7 @@ const HotelDetails = () => {
                 </span>
               </div>
               <button type="button" className="reserve-btn submit-mobile">
-                <NavLink to="/add_reservation">
+                <NavLink to="/add_reservation" state={{ hotelId }}>
                   Reserve
                 </NavLink>
               </button>
