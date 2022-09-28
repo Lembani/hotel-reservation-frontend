@@ -3,6 +3,7 @@
 The front-end section of the **Hotel-Reservations-Back-end** It is built with React and Redux.
 
 ## Built with
+
 - JavaScript
 - React
 - Redux
@@ -13,18 +14,24 @@ The front-end section of the **Hotel-Reservations-Back-end** It is built with Re
 You can get the API's repository via [this link](https://github.com/Lembani/hotel-reservation-backend.git)
 
 ## SetUp
+
 To get a local copy up and running, follow these steps:
 
-* You should have ***Node*** installed on your computer.
-* Clone this repository into your computer by running the following command in your terminal:
+- You should have **_Node_** installed on your computer.
+- Clone this repository into your computer by running the following command in your terminal:
+
 ```
 git clone https://github.com/Lembani/hotel-reservation-frontend.git
 ```
-* Run this command in the cloned directory, to install required packages: 
+
+- Run this command in the cloned directory, to install required packages:
+
 ```
 npm install
 ```
-* Run the project in your browser:
+
+- Run the project in your browser:
+
 ```
 npm start
 ```
@@ -32,6 +39,7 @@ npm start
 ## Authors
 
 👤 **Chia Carlyle**
+
 - LinkedIn: [![LinkedIn Badge](https://img.shields.io/badge/-chiacarlyle-black?logo=LinkedIn&logoColor=0A66C2&style=plastic)](https://linkedin.com/in/chia-carlyle)
 
 - GitHub: [![GitHub Badge](https://img.shields.io/badge/-carlylechia-black?logo=GitHub&logoColor=18171&style=plastic)](https://github.com/carlylechia)
@@ -40,6 +48,15 @@ npm start
 
 - Gmail: [![Gmail Badge](https://img.shields.io/badge/-chiacarlyle-black?logo=Gmail&logoColor=EA4335&style=plastic)](mailto:chiacarlyle@gmail.com)
 
+👤 **Frankline Osoro**
+
+- GitHub: [![LinkedIn Badge](https://img.shields.io/badge/-frank1738-black?logo=LinkedIn&logoColor=0A66C2&style=plastic)](https://github.com/frank1738)
+
+- Twitter: [![LinkedIn Badge](https://img.shields.io/badge/-frank1738-black?logo=LinkedIn&logoColor=0A66C2&style=plastic)](https://twitter.com/frankhiggins08)
+
+- LinkedIn: [![LinkedIn Badge](https://img.shields.io/badge/-frank1738-black?logo=LinkedIn&logoColor=0A66C2&style=plastic)](http://www.linkedin.com/in/frankline-osoro-b526ba18b)
+
+- Gmail: [![LinkedIn Badge](https://img.shields.io/badge/-frank1738-black?logo=LinkedIn&logoColor=0A66C2&style=plastic)](mailto:franklineosoro08@gmail.com)
 
 ## 🤝 Contributing
 
@@ -53,7 +70,8 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to Microverse
+- Coding Partners
+- Hat tip to [Microverse](https://www.microverse.org)
 - We acknowledge [Murat Korkmaz on Behance](https://www.behance.net/muratk) for designing the wireframe used for this project.
 
 ## 📝 License
