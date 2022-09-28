@@ -1,0 +1,175 @@
+.form-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-fields {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 95vh;
+  width: 90%;
+  box-shadow: 4px 9px 9px #a09797;
+}
+
+.input-fields textarea {
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px;
+  margin: 10px;
+  width: 90%;
+  height: 100px;
+  resize: none;
+}
+
+.input-container,
+.input-select {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+input[type="number" i] {
+  height: 25px;
+  width: 50%;
+}
+
+input[type="date" i] {
+  height: 25px;
+  width: 50%;
+}
+
+.form-input button {
+  border: 0;
+  padding: 10px;
+  width: 40%;
+  height: 45px;
+  border-radius: 10px;
+  background: #20a120;
+  margin-top: 5%;
+}
+
+.form-input button a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.forms {
+  background: linear-gradient(rgba(117, 93, 95, 0.8), rgba(204, 194, 194, 0.8)), url("https://thumbs.dreamstime.com/b/hotel-room-beautiful-orange-sofa-included-43642330.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.reservation {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 4px 9px 9px #a09797be;
+}
+
+.reservation p {
+  font-size: 20px;
+}
+
+.all-reservations {
+  background: #ddc548;
+}
+
+@media screen and (min-width: 768px) {
+  .input-fields {
+    padding: 7%;
+  }
+
+  .input-fields textarea {
+    height: 40%;
+  }
+
+  .input-container .duration,
+  input {
+    padding: 1.2rem;
+  }
+
+  .input-select {
+    display: flex;
+    align-items: center;
+    height: 10%;
+    padding-left: 7%;
+    width: 100%;
+  }
+
+  .input-select label {
+    display: flex;
+    align-items: center;
+    width: 85%;
+    gap: 13%;
+  }
+
+  #hotels {
+    height: 40px;
+    width: 46%;
+  }
+
+  .reservation {
+    height: 90vh;
+    box-shadow: 4px 9px 9px #a09797be;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding: 15%;
+    text-align: center;
+  }
+
+  .reservation p {
+    font-family: system-ui;
+    font-size: 26px;
+  }
+
+  .swiper {
+    width: 50%;
+    height: 99vh;
+  }
+
+  #swipper {
+    margin-left: 40%;
+    margin-right: 0;
+  }
+
+  .all-reservations {
+    display: flex;
+    color: #fff;
+    background: linear-gradient(rgba(117, 93, 95, 0.8), rgba(204, 194, 194, 0.8)), url("https://cdn.britannica.com/96/115096-050-5AFDAF5D/Bellagio-Hotel-Casino-Las-Vegas.jpg");
+  }
+
+  .all-reservations .navbar {
+    position: absolute;
+    width: 35%;
+    background: #ddc548;
+  }
+
+  .form-input button:hover {
+    cursor: pointer;
+    background-color: rgb(79, 126, 7);
+  }
+
+  .mobile-menu {
+    margin-inline: 20%;
+    box-shadow: 4px 9px 9px #a09797be;
+    background: beige;
+  }
+
+  .mobile-menu .social-links {
+    justify-content: space-around;
+  }
+
+  .swiper-button-prev::after,
+  .swiper-rtl .swiper-button-next::after {
+    color: rgb(241, 63, 23);
+  }
+}
