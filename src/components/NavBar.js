@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import MenuContext from '../Context/MenuContext';
 import './NavBar.css';
 import localStorageActions from '../utils/localStorage';
 
@@ -27,12 +28,17 @@ const NavBar = () => {
       });
   };
 
+  const { sideBar, setSideBar } = useContext(MenuContext);
   return (
-    <nav className="navbar">
+    <nav className={sideBar ? 'mobile-menu' : 'navbar'}>
       <div>
         <h2 className="logo logo-name">HoVe</h2>
       </div>
-      <div className="links">
+      <div
+        className="links"
+        onClick={() => setSideBar(false)}
+        role="presentation"
+      >
         <NavLink
           to="/hotels"
           className="navlink"
@@ -48,14 +54,14 @@ const NavBar = () => {
           Categories
         </NavLink>
         <NavLink
-          to="/reserve_now"
+          to="/add_reservation"
           className="navlink"
           style={({ isActive }) => (isActive ? activeStyle : undefined)}
         >
           Reserve Now
         </NavLink>
         <NavLink
-          to="/my_reservations"
+          to="/reservations"
           className="navlink"
           style={({ isActive }) => (isActive ? activeStyle : undefined)}
         >
@@ -103,6 +109,13 @@ const NavBar = () => {
       <div className="footer">
         <p> &copy; HoVe &amp; Micro 2022 </p>
       </div>
+      <button
+        type="button"
+        onClick={() => setSideBar(false)}
+        className="close-menu"
+      >
+        Close Menu
+      </button>
     </nav>
   );
 };
