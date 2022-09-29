@@ -237,6 +237,10 @@ h2 span:hover {
     display: none;
   }
 
+  .zero {
+    margin: 0;
+  }
+
   .cats-home {
     width: 90%;
     margin: auto;
@@ -251,7 +255,7 @@ h2 span:hover {
   }
 
   .card {
-    width: 50vw;
+    width: 60vw;
     justify-content: center;
   }
 

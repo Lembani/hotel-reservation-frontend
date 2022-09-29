@@ -3,10 +3,13 @@
 
 .hotels-section {
   display: flex;
+  justify-content: space-between;
 }
 
 .hotels-home {
-  width: 80%;
+  width: 70%;
+  margin-right: 3rem;
+  margin-top: 2rem;
 }
 
 .hotels-header {
@@ -93,7 +96,6 @@
   padding: 3rem;
   display: flex;
   justify-content: center;
-  margin-left: 3rem;
 }
 
 .swiper-button-next {
@@ -297,15 +299,6 @@ select {
 }
 
 @media screen and (max-width: 767px) {
-  .hamburger {
-    display: block;
-    margin-top: 10px;
-    font-size: larger;
-    position: fixed;
-    top: 0;
-    left: 2%;
-  }
-
   .hotels-section {
     left: 0%;
     margin-top: 3rem;
@@ -320,10 +313,26 @@ select {
   }
 
   .mobile-version {
-    display: block;
-    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 0 4.1rem;
     margin: 30% auto;
+    border: 1px solid rgba(255, 255, 255, 0.399);
+  }
+
+  .hotel {
+    margin: 3px auto;
+    width: 70%;
+  }
+
+  .background {
+    width: 100%;
+    height: 15rem;
+    background-color: lightgray;
+    border-radius: 50%;
+    position: absolute;
+    z-index: -1;
   }
 
   .swiper-button-prev {

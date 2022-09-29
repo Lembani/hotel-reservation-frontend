@@ -1,7 +1,7 @@
 import React, { useEffect, useContext } from 'react';
 // import { useContext } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Swiper from 'swiper/bundle';
+// import Swiper from 'swiper/bundle';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/fontawesome-free-solid';
 import { getReservations } from '../Redux/APIFunctions/reservations';
@@ -15,30 +15,30 @@ import Reservation from './Reservation';
 import MenuContext from '../Context/MenuContext';
 
 const Reservations = () => {
-  const swiper = new Swiper('.swiper', {
-    // Optional parameters
-    direction: 'horizontal',
-    loop: true,
-    slidePerView: 1,
-    autoplay: true,
+  // const swiper = new Swiper('.swiper', {
+  //   // Optional parameters
+  //   direction: 'horizontal',
+  //   loop: true,
+  //   slidePerView: 1,
+  //   autoplay: true,
 
-    // If we need pagination
-    pagination: {
-      // el: '.swiper-pagination',
-    },
+  //   // If we need pagination
+  //   pagination: {
+  //     // el: '.swiper-pagination',
+  //   },
 
-    // Navigation arrows
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
+  //   // Navigation arrows
+  //   navigation: {
+  //     nextEl: '.swiper-button-next',
+  //     prevEl: '.swiper-button-prev',
+  //   },
 
-    // And if we need scrollbar
-    scrollbar: {
-      el: '.swiper-scrollbar',
-    },
-  });
-  console.log(swiper);
+  //   // And if we need scrollbar
+  //   scrollbar: {
+  //     el: '.swiper-scrollbar',
+  //   },
+  // });
+  // console.log(swiper);
 
   const { reservations, loading, error } = useSelector((state) => state.reservations);
   const { showSideBar, sideBar } = useContext(MenuContext);

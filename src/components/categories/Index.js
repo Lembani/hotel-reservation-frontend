@@ -30,14 +30,13 @@ const Categories = () => {
   const [deleteCategory] = useDeleteCategoryMutation();
   const { showForm, setShowForm } = useContext(FormContext);
   const { showSideBar, sideBar } = useContext(MenuContext);
-  console.log(sideBar);
 
   const handleClick = (category) => {
     localStorage.setItem('category_id', category.id);
   };
 
   return (
-    <div>
+    <div className="zero">
       { sideBar ? <NavBar />
         : (
           <section className="categories-section">
@@ -69,10 +68,10 @@ const Categories = () => {
                 </button>
               </div>
               {error ? (
-                <div className="main">Ooops..! There was an error</div>
+                <div className="cats-home">Ooops..! There was an error</div>
               ) : null}
               {isLoading ? (
-                <div className="main">
+                <div className="cats-home">
                   <Loading />
                 </div>
               ) : null}
@@ -162,7 +161,7 @@ const Categories = () => {
                     </SwiperSlide>
                   ))
                 ) : (
-                  <div className="main">No categories yet...</div>
+                  <div className="cats-home">No categories yet...</div>
                 )}
               </Swiper>
               <Swiper

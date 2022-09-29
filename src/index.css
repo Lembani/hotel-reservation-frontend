@@ -27,7 +27,6 @@ body {
 p,
 strong,
 small {
-  /* font-family: var(--font); */
   font-weight: normal;
 }
 
@@ -37,7 +36,6 @@ h3,
 h4,
 h5,
 h6 {
-  /* font-family: var(--font); */
   font-weight: 700;
 }
 
@@ -59,8 +57,11 @@ a {
 
 @media screen and (max-width: 767px) {
   .hamburger {
-    display: block;
+    display: flex;
     margin-top: 10px;
-    font-size: large;
+    font-size: larger;
+    position: fixed;
+    top: 0;
+    left: 3%;
   }
 }

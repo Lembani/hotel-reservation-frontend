@@ -84,7 +84,6 @@ const NavBar = () => {
         <NavLink
           onClick={handleLogout}
           className="navlink"
-          style={({ isActive }) => (isActive ? activeStyle : undefined)}
         >
           Log Out
         </NavLink>
