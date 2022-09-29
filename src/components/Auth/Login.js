@@ -35,32 +35,42 @@ const Login = () => {
 
   return (
     <>
-      <h2>Login page</h2>
+      <section className="section-form">
+        <h2 className="form-title">Login Into Your Account</h2>
 
-      <div className="form-container">
-        <form className="signup-form" onSubmit={handleSubmit}>
-          <div className="form-group">
-            <p className="ms-4 mb-1">Email</p>
-            <input type="text" name="email" id="signup-email" className="form-control rounded-pill" placeholder="Enter your email" required onChange={(e) => setEmail(e.target.value)} />
-          </div>
-          <div className="form-group">
-            <p className="ms-4 mb-1">Password</p>
-            <input type="password" name="password" id="signup-password" className="form-control rounded-pill" placeholder="Enter your password" required onChange={(e) => setPassword(e.target.value)} />
-          </div>
+        <div className="form-container">
+          <div className="login-form-container">
+            <form className="login-form" onSubmit={handleSubmit}>
+              <div className="form-group">
+                <label htmlFor="email">
+                  Email
+                  <br />
+                  <input type="text" name="email" id="signup-email" className="form-control" placeholder="Enter your email" required onChange={(e) => setEmail(e.target.value)} />
+                </label>
+              </div>
+              <div className="form-group">
+                <label htmlFor="password">
+                  Password
+                  <br />
+                  <input type="password" name="password" id="signup-password" className="form-control" placeholder="Enter your password" required onChange={(e) => setPassword(e.target.value)} />
+                </label>
+              </div>
 
-          <div className="signup-buttons mt-5 text-center">
-            <button type="submit" className="style-btn rounded-pill" to="/">Login</button>
-          </div>
-        </form>
+              <div className="signup-buttons">
+                <button type="submit" className="login-btn" to="/">Login</button>
+              </div>
+            </form>
 
-        <div className="notice-account mt-4">
-          <p>
-            Dont have an account?
-            {' '}
-            <span className="login-link"><Link to="/register" id="login-on-signup">Register</Link></span>
-          </p>
+            <div className="notice-account">
+              <p>
+                Dont have an account?
+                {' '}
+                <span><Link className="login-link" to="/register" id="login-on-signup">Register</Link></span>
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
     </>
   );
 };
