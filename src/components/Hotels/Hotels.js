@@ -16,7 +16,6 @@ import NavBar from '../NavBar';
 import 'swiper/css';
 import Hotel from './Hotel';
 import './Hotel.css';
-import localStorageActions from '../../utils/localStorage';
 
 const Hotels = () => {
   const { showSideBar, sideBar } = useContext(MenuContext);
@@ -25,10 +24,6 @@ const Hotels = () => {
     dispatch(fetchHotels());
   }, [dispatch]);
   const Hotels = useSelector((state) => state.hotels);
-  const user = localStorageActions.getUser();
-
-  console.log(Hotels);
-  console.log('Hotel User: ', user);
 
   let availableHotels;
   if (Hotels.hotels === undefined) {
@@ -70,7 +65,7 @@ const Hotels = () => {
             </div>
             <Swiper
               modules={[Navigation, Pagination, Scrollbar, A11y]}
-              spaceBetween={100}
+              spaceBetween={33}
               slidesPerView={3}
               speed={800}
               navigation

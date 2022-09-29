@@ -166,6 +166,8 @@ const Category = () => {
             </Swiper>
             <NavLink to="/categories" className="hotels-nav white">
               <i
+                onClick={() => localStorage.removeItem('category_id')}
+                role="presentation"
                 title="Return to categories"
                 className="uil uil-angle-left-b back-description"
               />

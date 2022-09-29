@@ -131,7 +131,7 @@ input[type="date" i] {
     font-size: 26px;
   }
 
-  .swiper {
+  /* .swiper {
     width: 50%;
     height: 99vh;
   }
@@ -139,7 +139,7 @@ input[type="date" i] {
   #swipper {
     margin-left: 40%;
     margin-right: 0;
-  }
+  } */
 
   .all-reservations {
     display: flex;
@@ -168,8 +168,8 @@ input[type="date" i] {
     justify-content: space-around;
   }
 
-  .swiper-button-prev::after,
+  /* .swiper-button-prev::after,
   .swiper-rtl .swiper-button-next::after {
     color: rgb(241, 63, 23);
-  }
+  } */
 }
