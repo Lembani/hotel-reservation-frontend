@@ -33,7 +33,7 @@ export const getReservations = () => (dispatch) => {
     });
 };
 
-const reservationURL = 'http://127.0.0.1:3000/api/v1/hotels';
+const reservationURL = 'https://stark-badlands-38572.herokuapp.com/api/v1/hotels';
 
 export const postReservation = (reservation, hotelId) => (dispatch) => {
   console.log(reservation);
