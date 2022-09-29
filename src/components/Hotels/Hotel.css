@@ -28,6 +28,7 @@
   height: 27rem;
   position: relative;
   border-radius: 0.5rem;
+  margin-left: 2.5rem;
 }
 
 .hotel-img {
@@ -93,7 +94,8 @@
 
 .container {
   margin-top: 2rem;
-  width: 100%;
+  min-width: 60vw;
+  min-height: 30rem;
 }
 
 .swiper-button-next {
@@ -320,7 +322,7 @@ select {
 
   .hotel {
     margin: 3px auto;
-    width: 70%;
+    width: 100%;
   }
 
   .background {
