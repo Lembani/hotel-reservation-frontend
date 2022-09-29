@@ -80,6 +80,7 @@ const Reservations = () => {
                           duration={reservation.duration}
                           startDay={reservation.start_day}
                           endDay={reservation.end_day}
+                          userID={reservation.user_id}
                         />
                       </div>
 

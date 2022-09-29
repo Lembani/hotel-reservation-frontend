@@ -2,10 +2,11 @@ import React from 'react';
 
 const Reservation = (props) => {
   const {
-    reason, duration, startDay, endDay, id
+    reason, duration, startDay, endDay, id, userID
   } = props;
 
-  console.log(id)
+  console.log(id);
+  console.log(userID);
 
   return (
     <div className="reservation">
