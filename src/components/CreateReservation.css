@@ -33,12 +33,12 @@
   width: 100%;
 }
 
-input[type="number" i] {
+input[type='number' i] {
   height: 25px;
   width: 50%;
 }
 
-input[type="date" i] {
+input[type='date' i] {
   height: 25px;
   width: 50%;
 }
@@ -60,7 +60,8 @@ input[type="date" i] {
 }
 
 .forms {
-  background: linear-gradient(rgba(117, 93, 95, 0.8), rgba(204, 194, 194, 0.8)), url("https://thumbs.dreamstime.com/b/hotel-room-beautiful-orange-sofa-included-43642330.jpg");
+  background: linear-gradient(rgba(117, 93, 95, 0.8), rgba(204, 194, 194, 0.8)),
+    url('https://thumbs.dreamstime.com/b/hotel-room-beautiful-orange-sofa-included-43642330.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -144,7 +145,11 @@ input[type="date" i] {
   .all-reservations {
     display: flex;
     color: #fff;
-    background: linear-gradient(rgba(117, 93, 95, 0.8), rgba(204, 194, 194, 0.8)), url("https://cdn.britannica.com/96/115096-050-5AFDAF5D/Bellagio-Hotel-Casino-Las-Vegas.jpg");
+    background: linear-gradient(
+        rgba(117, 93, 95, 0.8),
+        rgba(204, 194, 194, 0.8)
+      ),
+      url('https://cdn.britannica.com/96/115096-050-5AFDAF5D/Bellagio-Hotel-Casino-Las-Vegas.jpg');
   }
 
   .all-reservations .navbar {
