@@ -11,11 +11,12 @@ import Reservation from './Reservation';
 import MenuContext from '../Context/MenuContext';
 
 const Reservations = () => {
-  const { reservations, loading, error } = useSelector((state) => state.reservations);
+  const {
+    reservations, loading, error,
+  } = useSelector((state) => state.reservations);
   const { showSideBar, sideBar } = useContext(MenuContext);
 
-  const userID = localStorageActions.getUser();
-  console.log(userID);
+  const userObject = localStorageActions.getUser();
 
   const dispatch = useDispatch();
 
@@ -46,7 +47,7 @@ const Reservations = () => {
                   <div className="reserve-cards">
 
                     {reservations?.map((reservation) => (
-                      reservation.user_id === userID.id
+                      reservation.user_id === userObject.id
                         ? (
                           <div key={reservation.id}>
                             <Reservation
@@ -56,6 +57,7 @@ const Reservations = () => {
                               startDay={reservation.start_day}
                               endDay={reservation.end_day}
                               userID={reservation.user_id}
+                              hotelID={reservation.hotel_id}
                             />
 
                           </div>
