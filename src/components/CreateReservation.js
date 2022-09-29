@@ -20,6 +20,8 @@ const CreateReservation = () => {
     dispatch(fetchHotels());
   }, [dispatch]);
   const Hotels = useSelector((state) => state.hotels);
+  const { addedReservation } = useSelector((state) => state.reservations);
+
   const [optionId, setoption] = useState('');
   const { showSideBar, sideBar } = useContext(MenuContext);
   const userID = localStorageActions.getUser();
@@ -32,7 +34,7 @@ const CreateReservation = () => {
   const { hotelId } = location.state || {};
 
   console.log(hotelId);
-  console.log(userID);
+  console.log(addedReservation);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -61,38 +63,38 @@ const CreateReservation = () => {
           <FontAwesomeIcon className="toggle" onClick={() => showSideBar()} icon={faBars} />
           <div className="form-input">
             <h2>ADD NEW RESERVATION</h2>
+            <h1>{addedReservation}</h1>
             <form className="input-fields" onSubmit={handleSubmit}>
               <label>Reason for staying</label>
               <textarea cols={90} name="reason" placeholder="reason" required />
-              <div className="input-container">
-                <label>Duration:</label>
-                <input className="duration" type="number" name="duration" placeholder="Duration" required />
-              </div>
-              <div className="input-container">
-                <label>Start day:</label>
-                <input type="date" name="startDay" required />
-              </div>
-              <div className="input-container">
-                <label>End day:</label>
-                <input type="date" name="endDay" required />
-              </div>
+
+              <label>Duration:</label>
+              <input className="duration" type="number" name="duration" placeholder="Duration" required />
+
+              <label>Start day:</label>
+              <input type="date" name="startDay" required />
+
+              <label>End day:</label>
+              <input type="date" name="endDay" required />
+
               {
                 hotelId ? null : (
                   <div className="input-select">
                     <label htmlFor="group">
                       Choose a hotel:
-                      <select name="hotels" id="hotels" onChange={(e) => handleSelect(e)}>
-                        <option>Choose a hotel</option>
-                        {Hotels.hotels
-                          ?.map(
-                            (hotel) => (
-                              <option key={hotel.id} value={hotel.id}>
-                                {hotel.name}
-                              </option>
-                            ),
-                          )}
-                      </select>
                     </label>
+                    <select name="hotels" id="hotels" onChange={(e) => handleSelect(e)}>
+                      <option>Choose a hotel</option>
+                      {Hotels.hotels
+                        ?.map(
+                          (hotel) => (
+                            <option key={hotel.id} value={hotel.id}>
+                              {hotel.name}
+                            </option>
+                          ),
+                        )}
+                    </select>
+
                   </div>
                 )
               }

@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchHotels } from '../Redux/Actions/hotels';
+import localStorageActions from '../utils/localStorage';
 
 const Reservation = (props) => {
   const {
-    reason, duration, startDay, endDay, id,
+    reason, duration, startDay, endDay, id, hotelID,
   } = props;
+
+  const dispatch = useDispatch();
+
+  const Hotels = useSelector((state) => state.hotels);
+  useEffect(() => {
+    dispatch(fetchHotels());
+  }, [dispatch]);
+
+  const userObject = localStorageActions.getUser();
 
   return (
     <div className="reservation" id={id}>
@@ -14,7 +26,7 @@ const Reservation = (props) => {
       <p>
         Duration:
         {duration}
-        <small>days</small>
+        <small>{duration === '1' ? 'day' : 'days'}</small>
       </p>
       <p>
         Start Day:
@@ -24,6 +36,24 @@ const Reservation = (props) => {
         End Day:
         {endDay}
       </p>
+      {
+        Hotels.hotels?.map((hotel) => (hotel.id === hotelID ? (
+          <div className="hotel-name" key={hotel.id}>
+            <h2>
+              HI
+              {' '}
+              {userObject.name}
+              !
+              YOU BOOKED
+              {' '}
+              {hotel.name}
+              {' '}
+              Hotel
+              !
+            </h2>
+          </div>
+        ) : null))
+      }
     </div>
   );
 };

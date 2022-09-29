@@ -16,6 +16,11 @@ export const fetchReservationsError = () => ({
   type: ActionTypes.FETCH_DATA_ERROR,
 });
 
+export const fetchAddedReservation = (reservation) => ({
+  type: ActionTypes.ADD_RESERVATION,
+  payload: reservation,
+});
+
 export const getReservations = () => (dispatch) => {
   dispatch(fetchReservationsLoading());
   fetch(URL)
@@ -41,7 +46,8 @@ export const postReservation = (reservation, hotelId) => (dispatch) => {
     body: JSON.stringify((reservation)),
   }).then((res) => {
     console.log(res);
-    // dispatch(addReservation(res));
+    console.log(res.statusText);
+    dispatch(fetchAddedReservation(res.statusText));
   }).catch(() => {
     dispatch(fetchReservationsError());
     console.log('error');

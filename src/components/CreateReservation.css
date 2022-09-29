@@ -27,6 +27,7 @@
 .input-container,
 .input-select {
   display: flex;
+  flex-direction: column;
   align-items: center;
   height: 50px;
   justify-content: space-evenly;
@@ -34,12 +35,12 @@
 }
 
 input[type='number' i] {
-  height: 25px;
+  height: 5%;
   width: 50%;
 }
 
 input[type='date' i] {
-  height: 25px;
+  height: 5%;
   width: 50%;
 }
 
@@ -61,7 +62,7 @@ input[type='date' i] {
 
 .forms {
   background:
-    linear-gradient(rgba(117, 93, 95, 0.8), rgba(204, 194, 194, 0.8)),
+    linear-gradient(#c8ff14a8, #e3ff8797),
     url('https://thumbs.dreamstime.com/b/hotel-room-beautiful-orange-sofa-included-43642330.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -88,13 +89,18 @@ input[type='date' i] {
   position: fixed;
 }
 
+label {
+  color: #fff;
+}
+
 @media screen and (min-width: 768px) {
   .input-fields {
     padding: 7%;
   }
 
   .input-fields textarea {
-    height: 40%;
+    height: 15%;
+    width: 51%;
   }
 
   .input-container .duration,
@@ -104,22 +110,25 @@ input[type='date' i] {
 
   .input-select {
     display: flex;
+    flex-direction: column;
     align-items: center;
     height: 10%;
-    padding-left: 7%;
-    width: 100%;
+
+    /* padding-left: 7%;
+    width: 100%; */
   }
 
   .input-select label {
     display: flex;
     align-items: center;
-    width: 85%;
+
+    /* width: 85%; */
     gap: 13%;
   }
 
   #hotels {
     height: 40px;
-    width: 46%;
+    width: 50%;
   }
 
   .reservation {
@@ -132,12 +141,13 @@ input[type='date' i] {
     flex-direction: column;
     padding: 10%;
     text-align: center;
-    background: teal;
+    background-color: var(--white);
   }
 
   .reservation p {
     font-family: system-ui;
     font-size: 26px;
+    color: var(--dark);
   }
 
   .all-reservations {
@@ -147,8 +157,8 @@ input[type='date' i] {
 
   .all-reservations .navbar {
     position: fixed;
-    width: 35%;
-    background: #ddc548;
+    width: 24%;
+    background: #f0f0f0;
   }
 
   .form-input button:hover {
@@ -171,4 +181,9 @@ input[type='date' i] {
     margin-left: 30%;
     height: 100vh;
   }
+
+  /*
+  .hotel-name h2 {
+    color: white;
+  } */
 }
