@@ -5,9 +5,6 @@ const Reservation = (props) => {
     reason, duration, startDay, endDay, id, userID,
   } = props;
 
-  console.log(id);
-  console.log(userID);
-
   return (
     <div className="reservation">
       <p>
