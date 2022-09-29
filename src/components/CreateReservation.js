@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/fontawesome-free-solid';
 import { postReservation } from '../Redux/APIFunctions/reservations';
 import { fetchHotels } from '../Redux/Actions/hotels';
+import localStorageActions from '../utils/localStorage';
 import './CreateReservation.css';
 
 import NavBar from './NavBar';
@@ -21,6 +22,7 @@ const CreateReservation = () => {
   const Hotels = useSelector((state) => state.hotels);
   const [optionId, setoption] = useState('');
   const { showSideBar, sideBar } = useContext(MenuContext);
+  const userID = localStorageActions.getUser();
 
   const handleSelect = (e) => {
     setoption(e.target.value);
@@ -30,7 +32,7 @@ const CreateReservation = () => {
   const { hotelId } = location.state || {};
 
   console.log(hotelId);
-  console.log(optionId);
+  console.log(userID);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -42,7 +44,7 @@ const CreateReservation = () => {
       duration: duration.value,
       start_day: startDay.value,
       end_day: endDay.value,
-      // user_id: 1,
+      user_id: userID.id,
     };
 
     hotelId ? dispatch(postReservation(newReservation, hotelId))

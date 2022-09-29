@@ -60,14 +60,15 @@ input[type='date' i] {
 }
 
 .forms {
-  background: linear-gradient(rgba(117, 93, 95, 0.8), rgba(204, 194, 194, 0.8)),
+  background:
+    linear-gradient(rgba(117, 93, 95, 0.8), rgba(204, 194, 194, 0.8)),
     url('https://thumbs.dreamstime.com/b/hotel-room-beautiful-orange-sofa-included-43642330.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .reservation {
-  height: 100vh;
+  height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -79,8 +80,12 @@ input[type='date' i] {
   font-size: 20px;
 }
 
-.all-reservations {
-  background: #ddc548;
+.all-reservations .mobile-menu {
+  height: 100vh;
+}
+
+#toggle {
+  position: fixed;
 }
 
 @media screen and (min-width: 768px) {
@@ -118,13 +123,16 @@ input[type='date' i] {
   }
 
   .reservation {
-    height: 90vh;
+    margin-bottom: 15%;
+    width: 94%;
+    height: 85vh;
     box-shadow: 4px 9px 9px #a09797be;
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
-    padding: 15%;
+    padding: 10%;
     text-align: center;
+    background: teal;
   }
 
   .reservation p {
@@ -132,28 +140,13 @@ input[type='date' i] {
     font-size: 26px;
   }
 
-  /* .swiper {
-    width: 50%;
-    height: 99vh;
-  }
-
-  #swipper {
-    margin-left: 40%;
-    margin-right: 0;
-  } */
-
   .all-reservations {
     display: flex;
     color: #fff;
-    background: linear-gradient(
-        rgba(117, 93, 95, 0.8),
-        rgba(204, 194, 194, 0.8)
-      ),
-      url('https://cdn.britannica.com/96/115096-050-5AFDAF5D/Bellagio-Hotel-Casino-Las-Vegas.jpg');
   }
 
   .all-reservations .navbar {
-    position: absolute;
+    position: fixed;
     width: 35%;
     background: #ddc548;
   }
@@ -173,8 +166,9 @@ input[type='date' i] {
     justify-content: space-around;
   }
 
-  /* .swiper-button-prev::after,
-  .swiper-rtl .swiper-button-next::after {
-    color: rgb(241, 63, 23);
-  } */
+  .reserve-cards {
+    width: 100%;
+    margin-left: 30%;
+    height: 100vh;
+  }
 }
