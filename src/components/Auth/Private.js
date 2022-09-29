@@ -11,7 +11,7 @@ const Private = () => {
   const user = localStorageActions.getUser();
 
   return (
-    user ? <Outlet /> : <Navigate to="/home" />
+    user ? <Outlet /> : <Navigate to="/" />
   );
 };
 
