@@ -24,12 +24,14 @@ import 'swiper/css/navigation';
 import 'swiper/css';
 import '../Hotels/Hotel.css';
 import NavBar from '../NavBar';
+import localStorageActions from '../../utils/localStorage';
 
 const Categories = () => {
   const { data, error, isLoading } = useGetCategoriesQuery();
   const [deleteCategory] = useDeleteCategoryMutation();
   const { showForm, setShowForm } = useContext(FormContext);
   const { showSideBar, sideBar } = useContext(MenuContext);
+  const user = localStorageActions.getUser();
 
   const handleClick = (category) => {
     localStorage.setItem('category_id', category.id);
@@ -56,16 +58,20 @@ const Categories = () => {
                     <span>Loading Categories...</span>
                   )}
                 </h1>
-                <button
-                  type="button"
-                  className="addcat-btn"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setShowForm(true);
-                  }}
-                >
-                  Add A Category
-                </button>
+                { user.admin
+                  ? (
+                    <button
+                      type="button"
+                      className="addcat-btn"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setShowForm(true);
+                      }}
+                    >
+                      Add A Category
+                    </button>
+                  )
+                  : null }
               </div>
               {error ? (
                 <div className="cats-home">Ooops..! There was an error</div>
@@ -147,17 +153,21 @@ const Categories = () => {
                           <img src="https://media.istockphoto.com/photos/awarding-real-estate-with-stars-picture-id1408246197?s=612x612" alt="categorize" />
                         </div>
                       </NavLink>
-                      <button
-                        type="button"
-                        title="Delete Category"
-                        className="trash"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          deleteCategory({ id: category.id });
-                        }}
-                      >
-                        <FontAwesomeIcon icon={faTrash} />
-                      </button>
+                      { user.admin
+                        ? (
+                          <button
+                            type="button"
+                            title="Delete Category"
+                            className="trash"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              deleteCategory({ id: category.id });
+                            }}
+                          >
+                            <FontAwesomeIcon icon={faTrash} />
+                          </button>
+                        )
+                        : null }
                     </SwiperSlide>
                   ))
                 ) : (
@@ -230,17 +240,21 @@ const Categories = () => {
                           <img src="https://media.istockphoto.com/photos/awarding-real-estate-with-stars-picture-id1408246197?s=612x612" alt="categorize" width="200" height="200" />
                         </div>
                       </NavLink>
-                      <button
-                        type="button"
-                        title="Delete Category"
-                        className="trash"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          deleteCategory({ id: category.id });
-                        }}
-                      >
-                        <FontAwesomeIcon icon={faTrash} />
-                      </button>
+                      { user.admin
+                        ? (
+                          <button
+                            type="button"
+                            title="Delete Category"
+                            className="trash"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              deleteCategory({ id: category.id });
+                            }}
+                          >
+                            <FontAwesomeIcon icon={faTrash} />
+                          </button>
+                        )
+                        : null }
                     </SwiperSlide>
                   ))
                 ) : (

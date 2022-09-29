@@ -12,6 +12,7 @@ const activeStyle = {
 
 const NavBar = () => {
   const navigate = useNavigate();
+  const user = localStorageActions.getUser();
 
   const handleLogout = () => {
     const URL = 'http://localhost:3000/users/sign_out';
@@ -67,20 +68,26 @@ const NavBar = () => {
         >
           My Reservations
         </NavLink>
-        <NavLink
-          to="/add_hotel"
-          className="navlink"
-          style={({ isActive }) => (isActive ? activeStyle : undefined)}
-        >
-          Add Hotel
-        </NavLink>
-        <NavLink
-          to="/delete_hotel"
-          className="navlink"
-          style={({ isActive }) => (isActive ? activeStyle : undefined)}
-        >
-          Delete Hotel
-        </NavLink>
+        {user.admin
+          ? (
+            <>
+              <NavLink
+                to="/add_hotel"
+                className="navlink"
+                style={({ isActive }) => (isActive ? activeStyle : undefined)}
+              >
+                Add Hotel
+              </NavLink>
+              <NavLink
+                to="/delete_hotel"
+                className="navlink"
+                style={({ isActive }) => (isActive ? activeStyle : undefined)}
+              >
+                Delete Hotel
+              </NavLink>
+            </>
+          )
+          : null }
         <NavLink
           onClick={handleLogout}
           className="navlink"

@@ -19,9 +19,11 @@ import UpdateCategory from './Update';
 import '../Hotels/Hotel.css';
 import NavBar from '../NavBar';
 import Hotel from '../Hotels/Hotel';
+import localStorageActions from '../../utils/localStorage';
 
 const Category = () => {
   const id = localStorage.getItem('category_id');
+  const user = localStorageActions.getUser();
   const navigate = useNavigate();
 
   const { data, isLoading, error } = useGetCategoryByIdQuery(id);
@@ -95,7 +97,9 @@ const Category = () => {
                   </>
                 ) : null}
               </div>
-              <div className="edit-div">
+              { user.admin
+              ? (
+<div className="edit-div">
                 <button
                   type="button"
                   title="Edit This Category"
@@ -108,7 +112,9 @@ const Category = () => {
                   Edit
                   <FontAwesomeIcon icon={faEdit} />
                 </button>
-              </div>
+</div>
+)
+              : null }
             </div>
           </div>
           <div className="cat-hotels-container">
@@ -125,16 +131,20 @@ const Category = () => {
                   <span>Loading Hotels...</span>
                 )}
               </h2>
-              <button
-                type="button"
-                className="addcat-btn pos"
-                onClick={(e) => {
+              { user.admin
+              ? (
+<button
+  type="button"
+  className="addcat-btn pos"
+  onClick={(e) => {
                   e.preventDefault();
                   navigate('/add_hotel');
                 }}
-              >
+>
                 Add A Hotel
-              </button>
+</button>
+)
+              : null }
             </div>
             <Swiper
               modules={[Pagination, Navigation]}
