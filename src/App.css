@@ -50,14 +50,53 @@
 }
 
 .home main strong {
-  color: gray;
+  color: var(--white);
 }
 
 .home main p {
-  color: grey;
-  font-family: serif;
+  color: var(--white);
   font-style: italic;
+  font-size: 30px;
   padding: 1rem;
+}
+
+.home main p span {
+  color: var(--green);
+  font-size: 40px;
+}
+
+.home main p strong {
+  font-size: 35px;
+  color: var(--yellow);
+}
+
+.home main .start {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 2rem;
+}
+
+.home main .start a strong {
+  border: 1px solid var(--green);
+  border-radius: 3rem;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  background-color: var(--green);
+}
+
+.home main .start a span {
+  border: 1px solid var(--yellow);
+  border-radius: 3rem;
+  text-align: center;
+  padding: 0.5rem 3rem;
+  background-color: var(--yellow);
+  color: var(--white);
+}
+
+.home main .start a:hover {
+  text-decoration: underline;
+  text-decoration-color: aliceblue;
 }
 
 .logo {
