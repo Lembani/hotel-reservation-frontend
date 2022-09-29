@@ -79,11 +79,6 @@ input[type='date' i] {
   font-size: 20px;
 }
 
-/* .all-reservations {
-  background: teal;
-
-} */
-
 .all-reservations .mobile-menu {
   height: 100vh;
 }
@@ -144,19 +139,9 @@ input[type='date' i] {
     font-size: 26px;
   }
 
-  /* .swiper {
-    width: 50%;
-    height: 99vh;
-  }
-
-  #swipper {
-    margin-left: 40%;
-    margin-right: 0;
-  } */
-
   .all-reservations {
     display: flex;
-    color: #fff;  
+    color: #fff;
   }
 
   .all-reservations .navbar {
@@ -185,9 +170,4 @@ input[type='date' i] {
     margin-left: 30%;
     height: 100vh;
   }
-
-  /* .swiper-button-prev::after,
-  .swiper-rtl .swiper-button-next::after {
-    color: rgb(241, 63, 23);
-  } */
 }
