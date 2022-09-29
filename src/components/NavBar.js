@@ -15,7 +15,7 @@ const NavBar = () => {
   const user = localStorageActions.getUser();
 
   const handleLogout = () => {
-    const URL = 'http://localhost:3000/users/sign_out';
+    const URL = 'https://stark-badlands-38572.herokuapp.com/users/sign_out';
     axios
       .delete(URL)
       .then((res) => {

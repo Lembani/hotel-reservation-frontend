@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 export const categoriesApi = createApi({
   reducerPath: 'categories',
-  baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3000/api/v1' }),
+  baseQuery: fetchBaseQuery({ baseUrl: 'https://stark-badlands-38572.herokuapp.com/api/v1' }),
   tagTypes: ['Cats'],
   endpoints: (builder) => ({
     getCategories: builder.query({

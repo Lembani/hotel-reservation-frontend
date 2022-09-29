@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:3000/api/v1';
+const BASE_URL = 'https://stark-badlands-38572.herokuapp.com/api/v1';
 
 const httpClient = axios.create({
   baseURL: BASE_URL,

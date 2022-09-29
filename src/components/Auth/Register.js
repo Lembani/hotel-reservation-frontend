@@ -23,7 +23,7 @@ const Register = () => {
     };
 
     Axios
-      .post('http://localhost:3000/users', userObj)
+      .post('https://stark-badlands-38572.herokuapp.com/users', userObj)
       .then((res) => {
         const data = res.data.user;
         localStorageActions.setUser(data);
