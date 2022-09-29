@@ -58,13 +58,6 @@ const Reservations = () => {
   if (error) {
     <h1 className="error">Kindly refresh the page ...</h1>;
   }
-  // console.log(sideBar);
-  // const [toggle, setToggle] = useState(false);
-
-  // const handlemenu = () => {
-  //   setToggle(!toggle);
-  //   // return toggle;
-  // };
 
   console.log(sideBar);
 
@@ -76,28 +69,28 @@ const Reservations = () => {
             sideBar ? <Navbar />
               : (
                 <>
-                  <FontAwesomeIcon className="toggle" onClick={() => showSideBar()} icon={faBars} />
-                  <div className="swiper" id="swipper">
-                    <div className="swiper-wrapper">
-                      {reservations.map((reservation) => (
-                        <div key={reservation.id} className="swiper-slide">
-                          <Reservation
-                            key={reservation.id}
-                            reason={reservation.reason}
-                            duration={reservation.duration}
-                            startDay={reservation.start_day}
-                            endDay={reservation.end_day}
-                          />
-                        </div>
+                  <FontAwesomeIcon className="toggle" id="toggle" onClick={() => showSideBar()} icon={faBars} />
 
-                      ))}
-                    </div>
-                    <div className="swiper-pagination" />
+                  <div className="reserve-cards">
+                    {reservations.map((reservation) => (
+                      <div key={reservation.id}>
+                        <Reservation
+                          id={reservation.id}
+                          reason={reservation.reason}
+                          duration={reservation.duration}
+                          startDay={reservation.start_day}
+                          endDay={reservation.end_day}
+                        />
+                      </div>
+
+                    ))}
+
+                    {/* <div className="swiper-pagination" />
 
                     <div className="swiper-button-prev" />
                     <div className="swiper-button-next" />
 
-                    <div className="swiper-scrollbar" />
+                    <div className="swiper-scrollbar" /> */}
 
                   </div>
                   <Navbar />

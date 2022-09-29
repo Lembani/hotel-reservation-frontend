@@ -66,7 +66,7 @@ input[type="date" i] {
 }
 
 .reservation {
-  height: 100vh;
+  height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -79,7 +79,16 @@ input[type="date" i] {
 }
 
 .all-reservations {
-  background: #ddc548;
+  background: teal;
+
+}
+
+.all-reservations .mobile-menu {
+  height: 100vh;
+}
+
+#toggle {
+  position: fixed;
 }
 
 @media screen and (min-width: 768px) {
@@ -117,12 +126,14 @@ input[type="date" i] {
   }
 
   .reservation {
-    height: 90vh;
+    margin-bottom: 15%;
+    width: 94%;
+    height: 85vh;
     box-shadow: 4px 9px 9px #a09797be;
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
-    padding: 15%;
+    padding: 10%;
     text-align: center;
   }
 
@@ -144,11 +155,12 @@ input[type="date" i] {
   .all-reservations {
     display: flex;
     color: #fff;
-    background: linear-gradient(rgba(117, 93, 95, 0.8), rgba(204, 194, 194, 0.8)), url("https://cdn.britannica.com/96/115096-050-5AFDAF5D/Bellagio-Hotel-Casino-Las-Vegas.jpg");
+    background: teal;
+    /* background: linear-gradient(rgba(117, 93, 95, 0.8), rgba(204, 194, 194, 0.8)), url("https://cdn.britannica.com/96/115096-050-5AFDAF5D/Bellagio-Hotel-Casino-Las-Vegas.jpg"); */
   }
 
   .all-reservations .navbar {
-    position: absolute;
+    position: fixed;
     width: 35%;
     background: #ddc548;
   }
@@ -166,6 +178,11 @@ input[type="date" i] {
 
   .mobile-menu .social-links {
     justify-content: space-around;
+  }
+
+  .reserve-cards {
+    width: 100%;
+    margin-left: 30%;
   }
 
   /* .swiper-button-prev::after,
