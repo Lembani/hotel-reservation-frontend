@@ -42,7 +42,23 @@ const Home = () => {
       <main>
         <strong>Welcome to...</strong>
         <h1 className="logo">HoVe</h1>
-        <p>Acquire what you desire, reserve what you really deserve!!</p>
+        <p>
+          <span>Find a hotel</span>
+          {' '}
+          from anywhere in the world and
+          {' '}
+          <strong>reserve</strong>
+          {' '}
+          for as long as you need!
+        </p>
+        <div className="start">
+          <NavLink to="/register">
+            <strong>GET STARTED</strong>
+          </NavLink>
+          <NavLink to="/login">
+            <span>Login</span>
+          </NavLink>
+        </div>
       </main>
     </div>
   );
