@@ -11,7 +11,6 @@ import Reservation from './Reservation';
 import MenuContext from '../Context/MenuContext';
 
 const Reservations = () => {
-
   const { reservations, loading, error } = useSelector((state) => state.reservations);
   const { showSideBar, sideBar } = useContext(MenuContext);
 
