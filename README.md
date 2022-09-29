@@ -13,6 +13,11 @@ The front-end section of the **Hotel-Reservations-Back-end** It is built with Re
 
 You can get the API's repository via [this link](https://github.com/Lembani/hotel-reservation-backend.git)
 
+## Deployment
+
+Check the live version of the application via this [link] (https://guileless-sprinkles-294f6c.netlify.app/
+)
+
 ## SetUp
 
 To get a local copy up and running, follow these steps:
