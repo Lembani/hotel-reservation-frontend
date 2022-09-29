@@ -71,6 +71,13 @@ npm start
 
 <hr>
 
+👤 **Nwachukwu Ekene**
+
+- GitHub: [@ekenecf](https://github.com/ekenecf)
+- LinkedIn: [Nwachukwu-Ekene](https://www.linkedin.com/in/nwachukwuekene/)
+- Twitter: [Nwachukwu-Ekene](https://www.twitter.com/ekene070)
+- Gmail: [ekens2u@gmail.com](mailto:ekens2u@gmail.com)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
