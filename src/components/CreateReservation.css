@@ -75,7 +75,6 @@ input[type='date' i] {
   justify-content: space-around;
   align-items: center;
   box-shadow: 4px 9px 9px #a09797be;
-  
 }
 
 .reservation p {
@@ -114,6 +113,7 @@ label {
     flex-direction: column;
     align-items: center;
     height: 10%;
+
     /* padding-left: 7%;
     width: 100%; */
   }
@@ -121,6 +121,7 @@ label {
   .input-select label {
     display: flex;
     align-items: center;
+
     /* width: 85%; */
     gap: 13%;
   }
@@ -141,7 +142,6 @@ label {
     padding: 10%;
     text-align: center;
     background-color: var(--white);
-
   }
 
   .reservation p {
@@ -181,7 +181,8 @@ label {
     margin-left: 30%;
     height: 100vh;
   }
-/* 
+
+  /*
   .hotel-name h2 {
     color: white;
   } */

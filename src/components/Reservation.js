@@ -47,6 +47,8 @@ const Reservation = (props) => {
               YOU BOOKED
               {' '}
               {hotel.name}
+              {' '}
+              Hotel
               !
             </h2>
           </div>
