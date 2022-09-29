@@ -65,7 +65,7 @@ const Hotels = () => {
             </div>
             <Swiper
               modules={[Navigation, Pagination, Scrollbar, A11y]}
-              spaceBetween={33}
+              spaceBetween={50}
               slidesPerView={3}
               speed={800}
               navigation
