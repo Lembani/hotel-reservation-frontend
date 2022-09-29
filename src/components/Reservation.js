@@ -2,7 +2,7 @@ import React from 'react';
 
 const Reservation = (props) => {
   const {
-    reason, duration, startDay, endDay, id, userID
+    reason, duration, startDay, endDay, id, userID,
   } = props;
 
   console.log(id);

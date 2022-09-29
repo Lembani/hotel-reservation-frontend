@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/fontawesome-free-solid';
 import { getReservations } from '../Redux/APIFunctions/reservations';
+import localStorageActions from '../utils/localStorage';
 import Navbar from './NavBar';
 import './CreateReservation.css';
 import 'swiper/css/bundle';
@@ -43,7 +44,8 @@ const Reservations = () => {
   const { reservations, loading, error } = useSelector((state) => state.reservations);
   const { showSideBar, sideBar } = useContext(MenuContext);
 
-  // console.log(reservations);
+  const userID = localStorageActions.getUser();
+  console.log(userID);
 
   const dispatch = useDispatch();
 
@@ -59,7 +61,7 @@ const Reservations = () => {
     <h1 className="error">Kindly refresh the page ...</h1>;
   }
 
-  console.log(sideBar);
+  console.log(reservations);
 
   return (
 
@@ -72,17 +74,22 @@ const Reservations = () => {
                   <FontAwesomeIcon className="toggle" id="toggle" onClick={() => showSideBar()} icon={faBars} />
 
                   <div className="reserve-cards">
-                    {reservations.map((reservation) => (
-                      <div key={reservation.id}>
-                        <Reservation
-                          id={reservation.id}
-                          reason={reservation.reason}
-                          duration={reservation.duration}
-                          startDay={reservation.start_day}
-                          endDay={reservation.end_day}
-                          userID={reservation.user_id}
-                        />
-                      </div>
+                    
+                    {reservations?.map((reservation) => (
+                      reservation.user_id === userID.id
+                        ? (
+                          <div key={reservation.id}>
+                            <Reservation
+                              id={reservation.id}
+                              reason={reservation.reason}
+                              duration={reservation.duration}
+                              startDay={reservation.start_day}
+                              endDay={reservation.end_day}
+                              userID={reservation.user_id}
+                            />
+
+                          </div>
+                        ) : null
 
                     ))}
 

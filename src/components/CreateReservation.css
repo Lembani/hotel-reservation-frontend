@@ -183,6 +183,7 @@ input[type="date" i] {
   .reserve-cards {
     width: 100%;
     margin-left: 30%;
+    height: 100vh;
   }
 
   /* .swiper-button-prev::after,
