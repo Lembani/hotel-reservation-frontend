@@ -15,8 +15,7 @@ You can get the API's repository via [this link](https://github.com/Lembani/hote
 
 ## Deployment
 
-Check the live version of the application via this [link] (https://guileless-sprinkles-294f6c.netlify.app/
-)
+Check the live version of the application via this [link](https://guileless-sprinkles-294f6c.netlify.app/)
 
 ## SetUp
 
