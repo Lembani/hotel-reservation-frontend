@@ -16,9 +16,9 @@ import {
   useGetCategoryHotelsQuery,
 } from '../../redux/api-functions/categories';
 import UpdateCategory from './Update';
-import '../Hotels/Hotel.css';
+import '../hotels/Hotel.css';
 import NavBar from '../NavBar';
-import Hotel from '../Hotels/Hotel';
+import Hotel from '../hotels/Hotel';
 import localStorageActions from '../../utils/localStorage';
 
 const Category = () => {

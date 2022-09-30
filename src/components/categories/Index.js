@@ -22,7 +22,7 @@ import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/navigation';
 import 'swiper/css';
-import '../Hotels/Hotel.css';
+import '../hotels/Hotel.css';
 import NavBar from '../NavBar';
 import localStorageActions from '../../utils/localStorage';
 
