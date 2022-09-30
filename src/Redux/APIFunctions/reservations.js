@@ -36,7 +36,6 @@ export const getReservations = () => (dispatch) => {
 const reservationURL = 'https://stark-badlands-38572.herokuapp.com/api/v1/hotels';
 
 export const postReservation = (reservation, hotelId) => (dispatch) => {
-  console.log(reservation);
   dispatch(fetchReservationsLoading());
   fetch(`${reservationURL}/${hotelId}/reservations`, {
     method: 'POST',
@@ -45,8 +44,6 @@ export const postReservation = (reservation, hotelId) => (dispatch) => {
     },
     body: JSON.stringify((reservation)),
   }).then((res) => {
-    console.log(res);
-    console.log(res.statusText);
     dispatch(fetchAddedReservation(res.statusText));
   }).catch(() => {
     dispatch(fetchReservationsError());
