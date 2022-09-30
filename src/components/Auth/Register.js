@@ -11,6 +11,8 @@ const Register = () => {
   const [password, setPassword] = useState('');
   const [passwordConfirmation, setPasswordConfirmation] = useState('');
 
+  const [error, setError] = useState('');
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const userObj = {
@@ -28,10 +30,10 @@ const Register = () => {
         const data = res.data.user;
         localStorageActions.setUser(data);
         navigate('/hotels');
-        console.log('Success Register: ', data);
       })
       .catch((error) => {
-        console.log('Failed Register: ', error);
+        const err = error.res.data.message;
+        setError(err);
       });
   };
 
@@ -41,6 +43,7 @@ const Register = () => {
 
       <div className="form-container">
         <div className="register-form-container">
+          <span className="error">{error}</span>
           <form className="register-form" onSubmit={handleSubmit}>
             <div className="form-group">
               <label htmlFor="name">
@@ -53,7 +56,7 @@ const Register = () => {
               <label htmlFor="email">
                 Email
                 <br />
-                <input type="text" name="email" id="register-email" className="form-control" placeholder="Enter your email" required onChange={(e) => setEmail(e.target.value)} />
+                <input type="email" name="email" id="register-email" className="form-control" placeholder="Enter your email" required onChange={(e) => setEmail(e.target.value)} />
               </label>
             </div>
             <div className="form-group">
