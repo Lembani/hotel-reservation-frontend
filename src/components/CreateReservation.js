@@ -33,9 +33,6 @@ const CreateReservation = () => {
   const location = useLocation();
   const { hotelId } = location.state || {};
 
-  console.log(hotelId);
-  console.log(addedReservation);
-
   const handleSubmit = (e) => {
     e.preventDefault();
     const {

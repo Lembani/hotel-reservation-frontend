@@ -32,8 +32,6 @@ const Reservations = () => {
     <h1 className="error">Kindly refresh the page ...</h1>;
   }
 
-  console.log(reservations);
-
   return (
 
     (
@@ -52,10 +50,10 @@ const Reservations = () => {
                           <div key={reservation.id}>
                             <Reservation
                               id={reservation.id}
-                              reason={reservation.reason}
-                              duration={reservation.duration}
-                              startDay={reservation.start_day}
-                              endDay={reservation.end_day}
+                              reason={` ${reservation.reason}`}
+                              duration={` ${reservation.duration}`}
+                              startDay={` ${reservation.start_day.slice(0, 10)}`}
+                              endDay={` ${reservation.end_day.slice(0, 10)}`}
                               userID={reservation.user_id}
                               hotelID={reservation.hotel_id}
                             />

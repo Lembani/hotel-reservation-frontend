@@ -26,7 +26,7 @@ const Reservation = (props) => {
       <p>
         Duration:
         {duration}
-        <small>{duration === '1' ? 'day' : 'days'}</small>
+        <small>{duration === '1' ? ' day' : ' days'}</small>
       </p>
       <p>
         Start Day:
