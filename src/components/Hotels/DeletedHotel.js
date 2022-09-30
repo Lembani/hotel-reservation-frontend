@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { deleteHotel } from '../../Redux/Actions/hotels';
+import { deleteHotel } from '../../redux/actions/hotels';
 
 const DeletedHotel = (props) => {
   const dispatch = useDispatch();

@@ -6,19 +6,19 @@ import { Provider } from 'react-redux';
 import {
   BrowserRouter, Route, Routes,
 } from 'react-router-dom';
-import Private from './components/Auth/Private';
+import Private from './components/auth/Private';
 import Home from './components/Home';
 import Categories from './components/categories/Index';
 import Category from './components/categories/Show';
-import store from './Redux/store';
-import { FormProvider } from './Context/FormContext';
-import { MenuProvider } from './Context/MenuContext';
+import store from './redux/store';
+import { FormProvider } from './context/FormContext';
+import { MenuProvider } from './context/MenuContext';
 import AddHotel from './components/Hotels/AddHotel';
 import HotelsComponent from './components/Hotels/Hotels';
 import HotelDetails from './components/Hotels/HotelDetails';
 import DeleteHotel from './components/Hotels/DeleteHotel';
-import Login from './components/Auth/Login';
-import Register from './components/Auth/Register';
+import Login from './components/auth/Login';
+import Register from './components/auth/Register';
 import Reservations from './components/Reservations';
 import CreateReservation from './components/CreateReservation';
 

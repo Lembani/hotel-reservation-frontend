@@ -6,11 +6,11 @@ import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/fontawesome-free-solid';
-import MenuContext from '../../Context/MenuContext';
+import MenuContext from '../../context/MenuContext';
 import Loading from '../Loading';
 
 import 'swiper/css/navigation';
-import { fetchHotels } from '../../Redux/Actions/hotels';
+import { fetchHotels } from '../../redux/actions/hotels';
 import NavBar from '../NavBar';
 
 import 'swiper/css';

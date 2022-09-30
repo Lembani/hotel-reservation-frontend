@@ -3,7 +3,7 @@
 /* eslint-disable react/prop-types */
 import styled from 'styled-components';
 import React, { useContext } from 'react';
-import FormContext from '../../Context/FormContext';
+import FormContext from '../../context/FormContext';
 
 const Form = ({ handleAddCategory }) => {
   const { values, setValues, handleClose } = useContext(FormContext);

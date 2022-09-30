@@ -10,11 +10,11 @@ import { SwiperSlide, Swiper } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import FormContext from '../../Context/FormContext';
+import FormContext from '../../context/FormContext';
 import {
   useGetCategoryByIdQuery,
   useGetCategoryHotelsQuery,
-} from '../../Redux/APIFunctions/categories';
+} from '../../redux/api-functions/categories';
 import UpdateCategory from './Update';
 import '../Hotels/Hotel.css';
 import NavBar from '../NavBar';

@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import Navbar from '../NavBar';
-import { useGetCategoriesQuery } from '../../Redux/APIFunctions/categories';
-import { addHotel } from '../../Redux/Actions/hotels';
+import { useGetCategoriesQuery } from '../../redux/api-functions/categories';
+import { addHotel } from '../../redux/actions/hotels';
 
 const AddHotel = () => {
   const [notification, notify] = useState('Add Hotel');

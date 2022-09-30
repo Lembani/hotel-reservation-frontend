@@ -1,5 +1,5 @@
 // Fetch data from the backend API
-import { ActionTypes } from '../Actions/reservations';
+import { ActionTypes } from '../actions/reservations';
 
 const URL = 'https://stark-badlands-38572.herokuapp.com/api/v1/reservations';
 

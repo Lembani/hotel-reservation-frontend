@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import MenuContext from '../Context/MenuContext';
+import MenuContext from '../context/MenuContext';
 import './NavBar.css';
 import localStorageActions from '../utils/localStorage';
 
