@@ -24,8 +24,9 @@ To get a local copy up and running, follow these steps:
 - You should have **_Node_** installed on your computer.
 - Clone this repository into your computer by running the following command in your terminal:
 
-```
-git clone https://github.com/Lembani/hotel-reservation-frontend.git
+```bash
+> git clone https://github.com/Lembani/hotel-reservation-frontend.git
+> cd hotel-reservation-frontend
 ```
 
 - Run this command in the cloned directory, to install required packages:
@@ -69,7 +70,7 @@ npm start
 👤 **Lembani Sakala**
 
 - GitHub: [@Lembani](https://github.com/lembani)
-- Twitter: [@Lembani\_](https://twitter.com/lembani_)
+- Twitter: [@Lembani_](https://twitter.com/lembani_)
 - LinkedIn: [lembani-sakala](https://linkedin.com/in/lembani-sakala)
 - Gmail: [lembanisakala@gmail.com](mailto:lembanisakala@gmail.com)
 
