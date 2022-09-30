@@ -146,3 +146,8 @@ label {
   color: var(--green);
   padding: 4px 6px;
 }
+
+.error {
+  color: #f00;
+  font-weight: 100;
+}

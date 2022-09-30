@@ -7,7 +7,6 @@ export const categoriesApi = createApi({
   endpoints: (builder) => ({
     getCategories: builder.query({
       query: () => '/categories',
-      // transformResponse: (res) => res.sort((a, b) => b.id - a.id),
       providesTags: ['Cats'],
     }),
     getCategoryById: builder.query({
