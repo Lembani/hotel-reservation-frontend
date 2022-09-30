@@ -1,8 +1,9 @@
+/* eslint-disable import/extensions */
 /* eslint-disable react/jsx-one-expression-per-line */
 import React, { useState } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchHotelData } from '../../Redux/Actions/hotels';
+import { fetchHotelData } from '../../redux/actions/hotels.js';
 import Navbar from '../NavBar';
 
 const HotelDetails = () => {

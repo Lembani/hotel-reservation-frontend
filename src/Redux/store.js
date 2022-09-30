@@ -3,9 +3,9 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/query';
 import { combineReducers } from 'redux';
-import { categoriesApi } from './APIFunctions/categories';
-import { hotelsReducer, hotelDataReducer } from './Actions/hotels';
-import ReservationsReducer from './Actions/reservations';
+import { categoriesApi } from './api-functions/categories';
+import { hotelsReducer, hotelDataReducer } from './actions/hotels';
+import ReservationsReducer from './actions/reservations';
 
 const rootReducer = combineReducers({
   [categoriesApi.reducerPath]: categoriesApi.reducer,

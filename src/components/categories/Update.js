@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import React, { useContext } from 'react';
-import { useUpdateCategoryMutation } from '../../Redux/APIFunctions/categories';
+import { useUpdateCategoryMutation } from '../../redux/api-functions/categories';
 import Form from './Form';
-import FormContext from '../../Context/FormContext';
+import FormContext from '../../context/FormContext';
 
 const UpdateCategory = ({ category }) => {
   const [updateCategory] = useUpdateCategoryMutation();

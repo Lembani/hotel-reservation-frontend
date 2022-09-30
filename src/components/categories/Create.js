@@ -3,8 +3,8 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useContext } from 'react';
 // import { useNavigate } from 'react-router-dom';
-import FormContext from '../../Context/FormContext';
-import { useAddCategoryMutation } from '../../Redux/APIFunctions/categories';
+import FormContext from '../../context/FormContext';
+import { useAddCategoryMutation } from '../../redux/api-functions/categories';
 import Form from './Form';
 
 const CreateCategory = () => {

@@ -4,13 +4,13 @@ import { useLocation } from 'react-router-dom';
 // import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/fontawesome-free-solid';
-import { postReservation } from '../Redux/APIFunctions/reservations';
-import { fetchHotels } from '../Redux/Actions/hotels';
+import { postReservation } from '../redux/api-functions/reservations';
+import { fetchHotels } from '../redux/actions/hotels';
 import localStorageActions from '../utils/localStorage';
 import './CreateReservation.css';
 
 import NavBar from './NavBar';
-import MenuContext from '../Context/MenuContext';
+import MenuContext from '../context/MenuContext';
 
 /* eslint-disable  jsx-a11y/label-has-associated-control */
 /* eslint-disable  no-unused-expressions */

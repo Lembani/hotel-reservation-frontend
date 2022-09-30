@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchHotels } from '../Redux/Actions/hotels';
+import { fetchHotels } from '../redux/actions/hotels';
 import localStorageActions from '../utils/localStorage';
-import { deleteReservation } from '../Redux/APIFunctions/reservations';
+import { deleteReservation } from '../redux/api-functions/reservations';
 
 const Reservation = (props) => {
   const {

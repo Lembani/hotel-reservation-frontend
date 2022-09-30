@@ -7,7 +7,7 @@ import { NavLink } from 'react-router-dom';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/navigation';
-import { fetchHotels } from '../../Redux/Actions/hotels';
+import { fetchHotels } from '../../redux/actions/hotels';
 import Navbar from '../NavBar';
 
 import 'swiper/css';

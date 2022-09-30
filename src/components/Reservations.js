@@ -2,13 +2,13 @@ import React, { useEffect, useContext } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/fontawesome-free-solid';
-import { getReservations } from '../Redux/APIFunctions/reservations';
+import { getReservations } from '../redux/api-functions/reservations';
 import localStorageActions from '../utils/localStorage';
 import Navbar from './NavBar';
 import './CreateReservation.css';
 import Reservation from './Reservation';
 
-import MenuContext from '../Context/MenuContext';
+import MenuContext from '../context/MenuContext';
 
 const Reservations = () => {
   const {

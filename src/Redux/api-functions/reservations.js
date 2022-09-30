@@ -1,5 +1,5 @@
 // Fetch data from the backend API
-import { ActionTypes } from '../Actions/reservations';
+import { ActionTypes } from '../actions/reservations';
 
 const URL = 'http://127.0.0.1:3000/api/v1/reservations';
 

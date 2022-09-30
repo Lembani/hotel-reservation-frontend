@@ -9,20 +9,20 @@ import { NavLink } from 'react-router-dom';
 import {
   useGetCategoriesQuery,
   useDeleteCategoryMutation,
-} from '../../Redux/APIFunctions/categories';
+} from '../../redux/api-functions/categories';
 import Loading from '../Loading';
 import './Categories.css';
 import CreateCategory from './Create';
 import { useContext } from 'react';
-import FormContext from '../../Context/FormContext';
-import MenuContext from '../../Context/MenuContext';
+import FormContext from '../../context/FormContext';
+import MenuContext from '../../context/MenuContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash, faBars } from '@fortawesome/fontawesome-free-solid';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/navigation';
 import 'swiper/css';
-import '../Hotels/Hotel.css';
+import '../hotels/Hotel.css';
 import NavBar from '../NavBar';
 import localStorageActions from '../../utils/localStorage';
 
