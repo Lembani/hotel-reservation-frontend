@@ -1,7 +1,7 @@
 // Fetch data from the backend API
 import { ActionTypes } from '../Actions/reservations';
 
-const URL = 'https://stark-badlands-38572.herokuapp.com/api/v1/reservations';
+const URL = 'http://127.0.0.1:3000/api/v1/reservations';
 
 export const fetchReservations = (reservation) => ({
   type: ActionTypes.FETCH_RESERVATIONS,
@@ -33,7 +33,7 @@ export const getReservations = () => (dispatch) => {
     });
 };
 
-const reservationURL = 'https://stark-badlands-38572.herokuapp.com/api/v1/hotels';
+const reservationURL = 'http://127.0.0.1:3000/api/v1/hotels';
 
 export const postReservation = (reservation, hotelId) => (dispatch) => {
   dispatch(fetchReservationsLoading());
@@ -45,6 +45,24 @@ export const postReservation = (reservation, hotelId) => (dispatch) => {
     body: JSON.stringify((reservation)),
   }).then((res) => {
     dispatch(fetchAddedReservation(res.statusText));
+  }).catch(() => {
+    dispatch(fetchReservationsError());
+    console.log('error');
+  });
+};
+
+const DelUrl = 'http://127.0.0.1:3000/api/v1/hotels';
+
+export const deleteReservation = (hotelId, id) => (dispatch) => {
+  console.log(hotelId, id, 'I want to delete');
+  fetch(`${DelUrl}/${hotelId}/reservations/${id}`, {
+    method: 'DELETE',
+    headers: {
+      'content-type': 'application/json',
+    },
+  }).then((res) => {
+    console.log(res);
+    window.location.reload();
   }).catch(() => {
     dispatch(fetchReservationsError());
     console.log('error');

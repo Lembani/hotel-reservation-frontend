@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchHotels } from '../Redux/Actions/hotels';
 import localStorageActions from '../utils/localStorage';
+import { deleteReservation } from '../Redux/APIFunctions/reservations';
 
 const Reservation = (props) => {
   const {
@@ -13,9 +14,14 @@ const Reservation = (props) => {
   const Hotels = useSelector((state) => state.hotels);
   useEffect(() => {
     dispatch(fetchHotels());
+    // dispatch(deleteReservation(id, hotelID));
   }, [dispatch]);
 
   const userObject = localStorageActions.getUser();
+
+  const handleDelete = (id, hotelID) => {
+    dispatch(deleteReservation(hotelID, id));
+  };
 
   return (
     <div className="reservation" id={id}>
@@ -54,6 +60,7 @@ const Reservation = (props) => {
           </div>
         ) : null))
       }
+      <button id="create-reservation" type="button" onClick={() => handleDelete(id, hotelID)}>Delete Reservation</button>
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/fontawesome-free-solid';
 import { postReservation } from '../Redux/APIFunctions/reservations';
@@ -95,7 +96,6 @@ const CreateReservation = () => {
                   </div>
                 )
               }
-
               <button type="submit">
 
                 Add

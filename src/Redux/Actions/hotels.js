@@ -1,5 +1,5 @@
 // Create actions and reducers
-const url = 'https://stark-badlands-38572.herokuapp.com/api/v1/hotels';
+const url = 'http://127.0.0.1:3000/api/v1/hotels';
 export const hotelsReducer = (state = {}, action) => {
   switch (action.type) {
     case 'load':

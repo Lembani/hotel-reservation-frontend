@@ -93,6 +93,17 @@ label {
   color: #fff;
 }
 
+#create-reservation {
+  height: 10%;
+  border: none;
+  background: crimson;
+  color: white;
+  border-radius: 15%;
+  padding-inline: 5%;
+  font-size: 20px;
+  cursor: pointer;
+}
+
 @media screen and (min-width: 768px) {
   .input-fields {
     padding: 7%;
