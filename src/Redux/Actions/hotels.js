@@ -1,5 +1,5 @@
 // Create actions and reducers
-const url = 'http://127.0.0.1:3000/api/v1/hotels';
+const url = 'https://stark-badlands-38572.herokuapp.com/api/v1/hotels';
 export const hotelsReducer = (state = {}, action) => {
   switch (action.type) {
     case 'load':
@@ -25,15 +25,13 @@ export const fetchHotels = () => async (dispatch) => {
 };
 
 export const addHotel = (inputData) => async () => {
-  const response = await fetch(url, {
+  await fetch(url, {
     method: 'POST',
     body: JSON.stringify(inputData),
     headers: {
       'content-type': 'application/json',
     },
   });
-  const data = await response.json();
-  console.log(data);
 };
 
 export const fetchHotelData = (id) => async (dispatch) => {
@@ -43,13 +41,10 @@ export const fetchHotelData = (id) => async (dispatch) => {
 };
 
 export const deleteHotel = (id) => async () => {
-  console.log('yes');
-  const response = await fetch(`${url}/${id}`, {
+  await fetch(`${url}/${id}`, {
     method: 'DELETE',
     headers: {
       'content-type': 'application/json',
     },
   });
-  const data = await response.json();
-  console.log(data);
 };

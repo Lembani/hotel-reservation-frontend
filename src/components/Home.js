@@ -25,6 +25,7 @@ const Home = () => {
         <FontAwesomeIcon
           icon={faSearch}
           className="search"
+          // eslint-disable-next-line no-alert
           onClick={() => alert('Please signup or signin!')}
         />
       </nav>

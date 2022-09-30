@@ -18,15 +18,11 @@ const NavBar = () => {
     const URL = 'https://stark-badlands-38572.herokuapp.com/users/sign_out';
     axios
       .delete(URL)
-      .then((res) => {
+      .then(() => {
         localStorageActions.removeUser();
-        const { data } = res;
-        console.log(data);
         navigate('/');
       })
-      .catch((error) => {
-        console.log('Error logging out! ', error);
-      });
+      .catch((error) => <p>{error}</p>);
   };
 
   const { sideBar, setSideBar } = useContext(MenuContext);
