@@ -11,6 +11,8 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  const [error, setError] = useState('');
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const userObj = {
@@ -26,10 +28,10 @@ const Login = () => {
         const data = response.data.user;
         localStorageActions.setUser(data);
         navigate('/hotels');
-        console.log('Success Login: ', data);
       })
       .catch((error) => {
-        console.log('Error Login: ', error.response.data);
+        const err = error.response.data.message;
+        setError(err);
       });
   };
 
@@ -40,12 +42,13 @@ const Login = () => {
 
         <div className="form-container">
           <div className="login-form-container">
+            <span className="error">{error}</span>
             <form className="login-form" onSubmit={handleSubmit}>
               <div className="form-group">
                 <label htmlFor="email">
                   Email
                   <br />
-                  <input type="text" name="email" id="signup-email" className="form-control" placeholder="Enter your email" required onChange={(e) => setEmail(e.target.value)} />
+                  <input type="email" name="email" id="signup-email" className="form-control" placeholder="Enter your email" required onChange={(e) => setEmail(e.target.value)} />
                 </label>
               </div>
               <div className="form-group">
