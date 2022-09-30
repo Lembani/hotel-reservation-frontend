@@ -1,0 +1,109 @@
+/* Mobile first styling for the Home Component */
+/* stylelint-disable, declaration-colon-newline-after */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.home {
+  background-image: linear-gradient(var(--yellow), rgba(209, 53, 49, 0.4)),
+    url('https://images.unsplash.com/photo-1641764844576-4d930f47fb21?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80');
+  background-size: cover;
+  background-position: center;
+  background-color: var(--yellow);
+  min-height: 100vh;
+}
+
+.none {
+  display: none;
+}
+
+.home .current-nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  color: var(--white);
+}
+
+.home nav .search {
+  padding: 5px;
+  border-radius: 50%;
+  background-color: var(--white);
+  color: var(--yellow);
+  font-size: 10px;
+}
+
+.home .current-nav .auth-links {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.home main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 80vh;
+}
+
+.home main strong {
+  color: var(--white);
+}
+
+.home main p {
+  color: var(--white);
+  font-style: italic;
+  font-size: 30px;
+  padding: 1rem;
+}
+
+.home main p span {
+  color: var(--green);
+  font-size: 40px;
+}
+
+.home main p strong {
+  font-size: 35px;
+  color: var(--yellow);
+}
+
+.home main .start {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 2rem;
+}
+
+.home main .start a strong {
+  border: 1px solid var(--green);
+  border-radius: 3rem;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  background-color: var(--green);
+}
+
+.home main .start a span {
+  border: 1px solid var(--yellow);
+  border-radius: 3rem;
+  text-align: center;
+  padding: 0.5rem 3rem;
+  background-color: var(--yellow);
+  color: var(--white);
+}
+
+.home main .start a:hover {
+  text-decoration: underline;
+  text-decoration-color: aliceblue;
+}
+
+.logo {
+  font-family: var(--logo);
+  color: var(--white);
+  padding: 10px 30px;
+  background-color: var(--dark);
+  border-radius: 80%;
+  text-align: center;
+}

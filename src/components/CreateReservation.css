@@ -1,0 +1,190 @@
+.form-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-fields {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 95vh;
+  width: 90%;
+  box-shadow: 4px 9px 9px #a09797;
+}
+
+.input-fields textarea {
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px;
+  margin: 10px;
+  width: 90%;
+  height: 100px;
+  resize: none;
+}
+
+.input-container,
+.input-select {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 50px;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+input[type='number' i] {
+  height: 5%;
+  width: 50%;
+}
+
+input[type='date' i] {
+  height: 5%;
+  width: 50%;
+}
+
+.form-input button {
+  border: 0;
+  padding: 10px;
+  width: 40%;
+  height: 45px;
+  border-radius: 10px;
+  background: #20a120;
+  margin-top: 5%;
+}
+
+.form-input button a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.forms {
+  background:
+    linear-gradient(#c8ff14a8, #e3ff8797),
+    url('https://thumbs.dreamstime.com/b/hotel-room-beautiful-orange-sofa-included-43642330.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.reservation {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 4px 9px 9px #a09797be;
+}
+
+.reservation p {
+  font-size: 20px;
+}
+
+.all-reservations .mobile-menu {
+  height: 100vh;
+}
+
+#toggle {
+  position: fixed;
+}
+
+label {
+  color: #fff;
+}
+
+#create-reservation {
+  height: 10%;
+  border: none;
+  background: crimson;
+  color: white;
+  border-radius: 15%;
+  padding-inline: 5%;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .input-fields {
+    padding: 7%;
+  }
+
+  .input-fields textarea {
+    height: 15%;
+    width: 51%;
+  }
+
+  .input-container .duration,
+  input {
+    padding: 1.2rem;
+  }
+
+  .input-select {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 10%;
+  }
+
+  .input-select label {
+    display: flex;
+    align-items: center;
+    gap: 13%;
+  }
+
+  #hotels {
+    height: 40px;
+    width: 50%;
+  }
+
+  .reservation {
+    margin-bottom: 15%;
+    width: 94%;
+    height: 85vh;
+    box-shadow: 4px 9px 9px #a09797be;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding: 10%;
+    text-align: center;
+    background-color: var(--white);
+  }
+
+  .reservation p {
+    font-family: system-ui;
+    font-size: 26px;
+    color: var(--dark);
+  }
+
+  .all-reservations {
+    display: flex;
+    color: #fff;
+  }
+
+  .all-reservations .navbar {
+    position: fixed;
+    width: 24%;
+    background: #f0f0f0;
+  }
+
+  .form-input button:hover {
+    cursor: pointer;
+    background-color: rgb(79, 126, 7);
+  }
+
+  .mobile-menu {
+    margin-inline: 20%;
+    box-shadow: 4px 9px 9px #a09797be;
+    background: beige;
+  }
+
+  .mobile-menu .social-links {
+    justify-content: space-around;
+  }
+
+  .reserve-cards {
+    width: 100%;
+    margin-left: 30%;
+    height: 100vh;
+  }
+}
