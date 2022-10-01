@@ -45,6 +45,7 @@ export const postReservation = (reservation, hotelId) => (dispatch) => {
     body: JSON.stringify((reservation)),
   }).then((res) => {
     dispatch(fetchAddedReservation(res.statusText));
+    window.location.reload();
   }).catch(() => {
     dispatch(fetchReservationsError());
   });
