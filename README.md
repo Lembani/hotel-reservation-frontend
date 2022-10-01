@@ -20,7 +20,8 @@ You can get the API's repository via [this link](https://github.com/Lembani/hote
 
 ## Deployment
 
-Check the live version of the application via this [link](https://stark-badlands-38572.herokuapp.com/)
+Check the live version of the application via this [link](https://micro-hotel-reservation.netlify.app
+)
 
 ## SetUp
 
