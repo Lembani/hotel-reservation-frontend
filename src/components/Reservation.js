@@ -14,7 +14,6 @@ const Reservation = (props) => {
   const Hotels = useSelector((state) => state.hotels);
   useEffect(() => {
     dispatch(fetchHotels());
-    // dispatch(deleteReservation(id, hotelID));
   }, [dispatch]);
 
   const userObject = localStorageActions.getUser();

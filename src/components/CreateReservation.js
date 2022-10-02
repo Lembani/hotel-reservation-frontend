@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useLocation } from 'react-router-dom';
-// import { NavLink } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/fontawesome-free-solid';
 import { postReservation } from '../redux/api-functions/reservations';
@@ -27,6 +26,8 @@ const CreateReservation = () => {
   const { showSideBar, sideBar } = useContext(MenuContext);
   const userID = localStorageActions.getUser();
 
+  const Navigate = useNavigate();
+
   const handleSelect = (e) => {
     setoption(e.target.value);
   };
@@ -46,12 +47,11 @@ const CreateReservation = () => {
       end_day: endDay.value,
       user_id: userID.id,
     };
-
     hotelId ? dispatch(postReservation(newReservation, hotelId))
       : dispatch(postReservation(newReservation, optionId));
-
     reason.value = '';
     duration.value = '';
+    Navigate('/reservations');
   };
 
   return (
@@ -97,9 +97,7 @@ const CreateReservation = () => {
                 )
               }
               <button type="submit">
-
                 Add
-
               </button>
             </form>
           </div>

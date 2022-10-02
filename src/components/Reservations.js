@@ -41,7 +41,6 @@ const Reservations = () => {
               : (
                 <>
                   <FontAwesomeIcon className="toggle" id="toggle" onClick={() => showSideBar()} icon={faBars} />
-
                   <div className="reserve-cards">
 
                     {reservations?.map((reservation) => (
@@ -57,7 +56,6 @@ const Reservations = () => {
                               userID={reservation.user_id}
                               hotelID={reservation.hotel_id}
                             />
-
                           </div>
                         ) : null
 
