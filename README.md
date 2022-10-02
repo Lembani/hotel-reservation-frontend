@@ -9,12 +9,17 @@ The front-end section of the **Hotel-Reservations-Back-end** It is built with Re
 - Redux
 - Axios
 
-## API
-
-## LIVE IMAGES
+## Screenshots
 
 <img src="public/mobile_hotel.png"/>
 <img src="public/hotel.png"/>
+<img src="public/Screen Shot 2022-10-01 at 17.05.21.png"/>
+<img src="public/localhost_3000_hotels(Samsung Galaxy S20 Ultra) (1).png"/>
+<img src="public/details.png"/>
+<img src="public/splash.png"/>
+
+
+## API
 
 You can get the API's repository via [this link](https://github.com/Lembani/hotel-reservation-backend.git)
 
