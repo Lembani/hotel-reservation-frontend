@@ -2,6 +2,8 @@
 
 The front-end section of the **Hotel-Reservations-Back-end** It is built with React and Redux.
 
+This application, we christened, 'Hove' which stands for Hotel ReserVe, lets a user do just that, reserve hotels. Admins have the ability to add, update and delete hotels and their information to the database, and a user can reserve any hotel available, according to their needs.
+
 ## Built with
 
 - JavaScript
@@ -13,7 +15,7 @@ The front-end section of the **Hotel-Reservations-Back-end** It is built with Re
 
 <img src="public/mobile_hotel.png"/>
 <img src="public/hotel.png"/>
-<img src="public/Screen Shot 2022-10-01 at 17.05.21.png"/>
+<img src="public/hotels-mobile.png"/>
 <img src="public/localhost_3000_hotels(Samsung Galaxy S20 Ultra) (1).png"/>
 <img src="public/details.png"/>
 <img src="public/splash.png"/>
